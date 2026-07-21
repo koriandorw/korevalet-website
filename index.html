@@ -3,20 +3,800 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="KoreValet provides dependable valet trash and recycling services for DFW apartment communities.">
+  <meta name="description" content="KoreValet provides dependable valet trash and recycling services for apartment communities across the DFW area.">
   <title>KoreValet | Valet Trash & Recycling</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --forest: #123b31;
+      --green: #1f604b;
+      --orange: #e8844a;
+      --cream: #f5f2eb;
+      --paper: #fffdf8;
+      --ink: #14221f;
+      --muted: #53645e;
+      --mint: #dcebe1;
+      --line: #d8ded6;
+      --white: #ffffff;
+      --shadow: 0 22px 55px rgba(20, 34, 31, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      margin: 0 auto;
+      width: min(1160px, calc(100% - 40px));
+    }
+
+    .eyebrow {
+      align-items: center;
+      color: var(--orange);
+      display: flex;
+      font-size: 0.74rem;
+      font-weight: 700;
+      gap: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      background: var(--orange);
+      content: "";
+      height: 2px;
+      width: 28px;
+    }
+
+    .section-title {
+      font-family: "Space Grotesk", Arial, sans-serif;
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      letter-spacing: -0.06em;
+      line-height: 0.98;
+      max-width: 700px;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      font-size: 1.04rem;
+      max-width: 590px;
+    }
+
+    .button {
+      align-items: center;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-flex;
+      font-size: 0.9rem;
+      font-weight: 700;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      transition: 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .button-primary:hover {
+      background: #c96b37;
+    }
+
+    .button-dark {
+      background: var(--forest);
+      color: var(--white);
+    }
+
+    .button-dark:hover {
+      background: var(--green);
+    }
+
+    .button-light {
+      border-color: rgba(255, 255, 255, 0.5);
+      color: var(--white);
+    }
+
+    .button-light:hover {
+      background: var(--white);
+      color: var(--forest);
+    }
+
+    /* Header */
+
+    .site-header {
+      background: rgba(255, 253, 248, 0.96);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      align-items: center;
+      display: flex;
+      height: 78px;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .brand {
+      align-items: center;
+      display: inline-flex;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      align-items: center;
+      background: var(--forest);
+      color: var(--white);
+      display: flex;
+      font-family: "Space Grotesk", Arial, sans-serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      height: 42px;
+      justify-content: center;
+      position: relative;
+      width: 42px;
+    }
+
+    .brand-mark::after {
+      background: var(--orange);
+      bottom: 0;
+      content: "";
+      height: 5px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    .brand-name {
+      display: block;
+      font-family: "Space Grotesk", Arial, sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      line-height: 1;
+    }
+
+    .brand-subtitle {
+      color: var(--muted);
+      display: block;
+      font-size: 0.57rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      align-items: center;
+      display: flex;
+      gap: 26px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+    .nav-links .nav-cta {
+      color: var(--white);
+      min-height: 42px;
+      padding: 0 17px;
+    }
+
+    .menu-button {
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      display: none;
+      padding: 8px;
+    }
+
+    .menu-button span {
+      background: var(--ink);
+      display: block;
+      height: 2px;
+      margin: 5px 0;
+      width: 25px;
+    }
+
+    /* Hero */
+
+    .hero {
+      background: var(--forest);
+      color: var(--white);
+      overflow: hidden;
+      padding: 92px 0 100px;
+      position: relative;
+    }
+
+    .hero::after {
+      background: var(--orange);
+      border-radius: 50%;
+      content: "";
+      height: 510px;
+      opacity: 0.14;
+      position: absolute;
+      right: -180px;
+      top: -190px;
+      width: 510px;
+    }
+
+    .hero-grid {
+      align-items: center;
+      display: grid;
+      gap: 70px;
+      grid-template-columns: 0.95fr 1.05fr;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-family: "Space Grotesk", Arial, sans-serif;
+      font-size: clamp(3rem, 6vw, 5.7rem);
+      letter-spacing: -0.07em;
+      line-height: 0.96;
+      margin: 22px 0;
+    }
+
+    .hero-copy {
+      color: #c9dbd2;
+      font-size: 1.08rem;
+      max-width: 490px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+    }
+
+    .hero-image-wrap::before {
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      content: "";
+      height: 100%;
+      left: -14px;
+      position: absolute;
+      top: 14px;
+      width: 100%;
+    }
+
+    .hero-image {
+      aspect-ratio: 4 / 4.5;
+      object-fit: cover;
+      position: relative;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .hero-stamp {
+      background: var(--orange);
+      bottom: 24px;
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 14px 17px;
+      position: absolute;
+      right: -20px;
+      text-transform: uppercase;
+      transform: rotate(-4deg);
+      z-index: 2;
+    }
+
+    /* Stats */
+
+    .stats {
+      background: var(--cream);
+      border-bottom: 1px solid var(--line);
+      border-top: 1px solid var(--line);
+      padding: 25px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .stat {
+      align-items: center;
+      display: flex;
+      gap: 15px;
+    }
+
+    .stat strong {
+      color: var(--green);
+      font-family: "Space Grotesk", Arial, sans-serif;
+      font-size: 1.6rem;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.25;
+    }
+
+    /* Services */
+
+    .services {
+      padding: 115px 0;
+    }
+
+    .services-header {
+      align-items: end;
+      display: flex;
+      gap: 35px;
+      justify-content: space-between;
+      margin-bottom: 48px;
+    }
+
+    .services-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .service-card {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      transition: 220ms ease;
+    }
+
+    .service-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-7px);
+    }
+
+    .service-card img {
+      height: 220px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .service-content {
+      padding: 27px;
+    }
+
+    .service-number {
+      color: var(--orange);
+      font-family: "Space Grotesk", Arial, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .service-card h3 {
+      font-family: "Space Grotesk", Arial, sans-serif;
+      font-size: 1.45rem;
+      margin: 12px 0 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* Process */
+
+    .process {
+      background: var(--mint);
+      padding: 110px 0;
+    }
+
+    .process-grid {
+      display: grid;
+      gap: 55px;
+      grid-template-columns: 0.8fr 1.2fr;
+    }
+
+    .process-list {
+      border-top: 1px solid rgba(20, 34, 31, 0.2);
+      margin-top: 10px;
+    }
+
+    .process-item {
+      border-bottom: 1px solid rgba(20, 34, 31, 0.2);
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 45px 1fr;
+      padding: 25px 0;
+    }
+
+    .process-number {
+      color: var(--orange);
+      font-family: "Space Grotesk", Arial, sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .process-item h3 {
+      font-family: "Space Grotesk", Arial, sans-serif;
+      font-size: 1.25rem;
+      margin-bottom: 5px;
+    }
+
+    .process-item p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* ROI */
+
+    .roi-section {
+      padding: 115px 0;
+    }
+
+    .roi-grid {
+      align-items: start;
+      display: grid;
+      gap: 70px;
+      grid-template-columns: 0.75fr 1.25fr;
+    }
+
+    .roi-intro .section-title {
+      margin: 20px 0;
+    }
+
+    .roi-note {
+      border-left: 3px solid var(--orange);
+      color: var(--muted);
+      font-size: 0.87rem;
+      margin-top: 30px;
+      padding-left: 15px;
+    }
+
+    .calculator {
+      background: var(--forest);
+      color: var(--white);
+      padding: 36px;
+    }
+
+    .calculator h2 {
+      font-family: "Space Grotesk", Arial, sans-serif;
+      font-size: 1.65rem;
+      margin-bottom: 26px;
+    }
+
+    .field {
+      margin-bottom: 20px;
+    }
+
+    .field label {
+      color: #d3e2da;
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      background: var(--white);
+      border: 1px solid transparent;
+      border-radius: 4px;
+      color: var(--ink);
+      min-height: 48px;
+      padding: 12px 13px;
+      width: 100%;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--orange);
+      outline: 3px solid rgba(232, 132, 74, 0.25);
+    }
+
+    .range-row {
+      align-items: center;
+      display: flex;
+      gap: 15px;
+    }
+
+    .range-row input[type="range"] {
+      accent-color: var(--orange);
+      flex: 1;
+      min-height: auto;
+      padding: 0;
+    }
+
+    .range-value {
+      background: var(--orange);
+      border-radius: 4px;
+      font-family: "Space Grotesk", Arial, sans-serif;
+      font-weight: 700;
+      min-width: 55px;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .results {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 28px;
+      padding-top: 24px;
+    }
+
+    .result {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 15px;
+    }
+
+    .result span {
+      color: #b4cbc0;
+      display: block;
+      font-size: 0.73rem;
+      margin-bottom: 4px;
+    }
+
+    .result strong {
+      font-family: "Space Grotesk", Arial, sans-serif;
+      font-size: 1.35rem;
+    }
+
+    .result.highlight strong {
+      color: #ffad7b;
+    }
+
+    /* Contact */
+
+    .contact {
+      background: var(--cream);
+      padding: 115px 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 70px;
+      grid-template-columns: 0.8fr 1.2fr;
+    }
+
+    .contact-copy .section-title {
+      margin: 20px 0;
+    }
+
+    .contact-details {
+      border-top: 1px solid var(--line);
+      margin-top: 35px;
+      padding-top: 25px;
+    }
+
+    .contact-details p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 9px;
+    }
+
+    .contact-details a {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .contact-form {
+      background: var(--white);
+      box-shadow: var(--shadow);
+      padding: 36px;
+    }
+
+    .form-row {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-form .field label {
+      color: var(--ink);
+    }
+
+    .contact-form textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    .contact-form .button {
+      border: 0;
+      width: 100%;
+    }
+
+    /* Footer */
+
+    .footer {
+      background: var(--ink);
+      color: var(--white);
+      padding: 30px 0;
+    }
+
+    .footer-inner {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .footer p {
+      color: #9eafaa;
+      font-size: 0.8rem;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .process-grid,
+      .roi-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 70px 0 85px;
+      }
+
+      .hero-image-wrap {
+        max-width: 590px;
+      }
+
+      .services,
+      .process,
+      .roi-section,
+      .contact {
+        padding: 80px 0;
+      }
+
+      .roi-grid,
+      .contact-grid {
+        gap: 42px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 30px, 1160px);
+      }
+
+      .nav {
+        height: 68px;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        align-items: stretch;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        left: 0;
+        padding: 10px 15px 18px;
+        position: absolute;
+        right: 0;
+        top: 68px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 13px 0;
+      }
+
+      .nav-links .nav-cta {
+        margin-top: 5px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.7rem, 14vw, 4rem);
+      }
+
+      .hero-stamp {
+        bottom: 13px;
+        right: 10px;
+      }
+
+      .stats-grid,
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 16px;
+      }
+
+      .stat:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .services-header {
+        align-items: start;
+        flex-direction: column;
+        margin-bottom: 30px;
+      }
+
+      .calculator,
+      .contact-form {
+        padding: 24px;
+      }
+
+      .form-row,
+      .results {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        align-items: start;
+        flex-direction: column;
+        gap: 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="index.html" aria-label="KoreValet home">
+      <a class="brand" href="#home" aria-label="KoreValet home">
         <span class="brand-mark">K</span>
 
         <span>
@@ -38,18 +818,18 @@
       </button>
 
       <nav class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#process">Our Process</a>
-        <a href="roi.html">Property ROI</a>
-        <a href="contact.html">Contact</a>
-        <a class="button button-dark nav-cta" href="contact.html">Request a Quote</a>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#process">Our Process</a>
+        <a href="#roi">Property ROI</a>
+        <a href="#contact">Contact</a>
+        <a class="button button-dark nav-cta" href="#contact">Request a Quote</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="home">
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">DFW apartment communities</div>
@@ -61,8 +841,8 @@
           </p>
 
           <div class="hero-actions">
-            <a class="button button-primary" href="roi.html">Calculate Your ROI</a>
-            <a class="button button-light" href="contact.html">Book a Consultation</a>
+            <a class="button button-primary" href="#roi">Calculate Your ROI</a>
+            <a class="button button-light" href="#contact">Book a Consultation</a>
           </div>
         </div>
 
@@ -166,6 +946,7 @@
       <div class="container process-grid">
         <div>
           <div class="eyebrow">How it works</div>
+
           <h2 class="section-title">A simple system your team can trust.</h2>
 
           <p class="section-copy" style="margin-top: 24px;">
@@ -210,34 +991,192 @@
       </div>
     </section>
 
-    <section class="contact">
+    <section class="roi-section" id="roi">
+      <div class="container roi-grid">
+        <div class="roi-intro">
+          <div class="eyebrow">For property managers</div>
+
+          <h2 class="section-title">See what your amenity could be worth.</h2>
+
+          <p class="section-copy" style="margin-top: 24px;">
+            Use this estimate to explore the potential revenue and operating margin of a valet trash program at your community.
+          </p>
+
+          <p class="roi-note">
+            This is a planning estimate. Actual pricing and operating costs depend on property size, location, schedule, and community needs.
+          </p>
+        </div>
+
+        <div class="calculator">
+          <h2>Community ROI estimate</h2>
+
+          <div class="field">
+            <label for="unitRange">Number of apartment units</label>
+
+            <div class="range-row">
+              <input id="unitRange" type="range" min="50" max="1000" step="10" value="250">
+              <span class="range-value" id="unitValue">250</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="residentFee">Monthly charge to each resident</label>
+            <input id="residentFee" type="number" min="0" step="1" value="30">
+          </div>
+
+          <div class="field">
+            <label for="serviceCost">Estimated service cost per unit</label>
+            <input id="serviceCost" type="number" min="0" step="1" value="12">
+          </div>
+
+          <div class="results">
+            <div class="result">
+              <span>Estimated monthly revenue</span>
+              <strong id="monthlyRevenue">$7,500</strong>
+            </div>
+
+            <div class="result">
+              <span>Estimated monthly service cost</span>
+              <strong id="monthlyCost">$3,000</strong>
+            </div>
+
+            <div class="result highlight">
+              <span>Estimated monthly profit</span>
+              <strong id="monthlyProfit">$4,500</strong>
+            </div>
+
+            <div class="result highlight">
+              <span>Estimated annual profit</span>
+              <strong id="annualProfit">$54,000</strong>
+            </div>
+
+            <div class="result highlight">
+              <span>Estimated ROI margin</span>
+              <strong id="roiPercent">60%</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
       <div class="container contact-grid">
-        <div>
-          <div class="eyebrow">Ready to learn more?</div>
+        <div class="contact-copy">
+          <div class="eyebrow">Start a conversation</div>
+
           <h2 class="section-title">Let’s make your community work better.</h2>
 
           <p class="section-copy" style="margin-top: 24px;">
-            Learn how KoreValet can support your residents, property team, and community operations.
-          </p>
-        </div>
-
-        <div class="contact-form">
-          <h2>Get started</h2>
-          <p class="section-copy" style="margin: 12px 0 24px;">
-            Request a property quote or schedule a consultation.
+            Tell us about your property and we’ll follow up with availability, next steps, and a tailored proposal.
           </p>
 
-          <a class="button button-primary" href="contact.html">
-            Contact KoreValet
-          </a>
+          <div class="contact-details">
+            <p>Serving apartment communities throughout the DFW area.</p>
+
+            <p>
+              Email:
+              <a href="mailto:management@korevalet.com">
+                management@korevalet.com
+              </a>
+            </p>
+
+            <p>Consultations and property quotes available.</p>
+          </div>
         </div>
+
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID"
+          method="POST"
+        >
+          <!-- Replace the URL after your website is published -->
+          <input
+            type="hidden"
+            name="_next"
+            value="https://www.korevalet.com/thank-you.html"
+          >
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="New KoreValet property inquiry"
+          >
+
+          <div class="form-row">
+            <div class="field">
+              <label for="propertyName">Property or community name</label>
+              <input id="propertyName" name="property_name" type="text" required>
+            </div>
+
+            <div class="field">
+              <label for="contactName">Your name</label>
+              <input id="contactName" name="contact_name" type="text" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Business email</label>
+              <input id="email" name="email" type="email" required>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="location">Property location</label>
+              <input
+                id="location"
+                name="property_location"
+                type="text"
+                placeholder="City, TX"
+              >
+            </div>
+
+            <div class="field">
+              <label for="units">Approximate unit count</label>
+              <input id="units" name="unit_count" type="number" min="1">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="requestType">What can we help with?</label>
+
+            <select id="requestType" name="request_type" required>
+              <option value="">Select one</option>
+              <option value="Request a quote">Request a quote</option>
+              <option value="Book a consultation">Book a consultation</option>
+              <option value="Learn about resident services">
+                Learn about resident services
+              </option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Additional details</label>
+
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell us about your community, service needs, or timeline."
+            ></textarea>
+          </div>
+
+          <button class="button button-primary" type="submit">
+            Send Inquiry
+          </button>
+        </form>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container footer-inner">
-      <a class="brand" href="index.html">
+      <a class="brand" href="#home">
         <span class="brand-mark">K</span>
 
         <span>
@@ -252,6 +1191,64 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    const unitRange = document.getElementById("unitRange");
+    const unitValue = document.getElementById("unitValue");
+    const residentFee = document.getElementById("residentFee");
+    const serviceCost = document.getElementById("serviceCost");
+    const monthlyRevenue = document.getElementById("monthlyRevenue");
+    const monthlyCost = document.getElementById("monthlyCost");
+    const monthlyProfit = document.getElementById("monthlyProfit");
+    const annualProfit = document.getElementById("annualProfit");
+    const roiPercent = document.getElementById("roiPercent");
+
+    function formatMoney(value) {
+      return value.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 0
+      });
+    }
+
+    function calculateROI() {
+      const units = Number(unitRange.value) || 0;
+      const residentCharge = Number(residentFee.value) || 0;
+      const costPerUnit = Number(serviceCost.value) || 0;
+
+      const revenue = units * residentCharge;
+      const cost = units * costPerUnit;
+      const profit = revenue - cost;
+      const yearlyProfit = profit * 12;
+      const margin = revenue > 0 ? (profit / revenue) * 100 : 0;
+
+      unitValue.textContent = units;
+      monthlyRevenue.textContent = formatMoney(revenue);
+      monthlyCost.textContent = formatMoney(cost);
+      monthlyProfit.textContent = formatMoney(profit);
+      annualProfit.textContent = formatMoney(yearlyProfit);
+      roiPercent.textContent = `${Math.round(margin)}%`;
+    }
+
+    unitRange.addEventListener("input", calculateROI);
+    residentFee.addEventListener("input", calculateROI);
+    serviceCost.addEventListener("input", calculateROI);
+
+    calculateROI();
+  </script>
 </body>
 </html>
