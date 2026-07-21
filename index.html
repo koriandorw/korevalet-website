@@ -6,10 +6,10 @@
 
   <meta
     name="description"
-    content="KoreValet provides dependable valet trash and recycling services for apartment communities throughout the DFW area."
+    content="KoreValet provides apartment valet trash, recycling, and dog waste station services throughout the DFW area."
   >
 
-  <title>KoreValet | Apartment Valet Trash Service</title>
+  <title>KoreValet | Apartment Community Services</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -154,10 +154,10 @@
       background: var(--navy-dark);
     }
 
-    /* Header */
+    /* Navigation */
 
     .site-header {
-      background: rgba(252, 250, 246, 0.95);
+      background: rgba(252, 250, 246, 0.96);
       border-bottom: 1px solid var(--line);
       position: sticky;
       top: 0;
@@ -244,12 +244,11 @@
     /* Hero */
 
     .hero {
-  background:
-    linear-gradient(105deg, rgba(36, 58, 85, 0.98) 0%, rgba(48, 74, 106, 0.84) 55%, rgba(48, 74, 106, 0.58) 100%),
-    url("https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1800&q=85")
-    center / cover no-repeat;
+      background:
+        linear-gradient(105deg, rgba(36, 58, 85, 0.98), rgba(48, 74, 106, 0.72)),
+        url("https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1800&q=85")
+        center / cover no-repeat;
       color: var(--white);
-      min-height: 640px;
       padding: 105px 0;
     }
 
@@ -358,7 +357,7 @@
     }
 
     .service-card img {
-      height: 220px;
+      height: 230px;
       object-fit: cover;
       width: 100%;
     }
@@ -370,7 +369,7 @@
     .service-number {
       color: var(--brown);
       font-family: "Manrope", Arial, sans-serif;
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       font-weight: 800;
       letter-spacing: 0.06em;
     }
@@ -379,12 +378,72 @@
       color: var(--navy-dark);
       font-family: "Manrope", Arial, sans-serif;
       font-size: 1.4rem;
+      line-height: 1.15;
       margin: 12px 0 9px;
     }
 
     .service-card p {
       color: var(--muted);
       font-size: 0.91rem;
+    }
+
+    /* Pet station service */
+
+    .pet-service {
+      background: var(--navy-dark);
+      color: var(--white);
+      margin-top: 28px;
+      overflow: hidden;
+    }
+
+    .pet-service-grid {
+      align-items: stretch;
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+    }
+
+    .pet-service-image {
+      height: 100%;
+      min-height: 340px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .pet-service-content {
+      padding: 48px;
+    }
+
+    .pet-service-content .eyebrow {
+      color: #d5b99a;
+    }
+
+    .pet-service-content h3 {
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      letter-spacing: -0.05em;
+      line-height: 1;
+      margin: 20px 0;
+      max-width: 560px;
+    }
+
+    .pet-service-content p {
+      color: #d9e2e9;
+      max-width: 560px;
+    }
+
+    .pet-service-list {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(2, 1fr);
+      list-style: none;
+      margin-top: 26px;
+    }
+
+    .pet-service-list li {
+      border-left: 2px solid var(--brown-light);
+      color: #f1eee8;
+      font-size: 0.9rem;
+      padding-left: 12px;
     }
 
     /* Process */
@@ -430,7 +489,7 @@
       font-size: 0.91rem;
     }
 
-    /* ROI */
+    /* ROI calculator */
 
     .roi-section {
       padding: 110px 0;
@@ -678,7 +737,8 @@
       .hero-grid,
       .process-grid,
       .roi-grid,
-      .contact-grid {
+      .contact-grid,
+      .pet-service-grid {
         grid-template-columns: 1fr;
       }
 
@@ -688,6 +748,11 @@
 
       .hero-photo {
         max-width: 600px;
+      }
+
+      .pet-service-image {
+        height: 300px;
+        min-height: 0;
       }
 
       .services,
@@ -760,6 +825,10 @@
       }
 
       .stats-grid,
+      .pet-service-list {
+        grid-template-columns: 1fr;
+      }
+
       .services-grid {
         grid-template-columns: 1fr;
       }
@@ -778,6 +847,10 @@
         align-items: start;
         flex-direction: column;
         margin-bottom: 30px;
+      }
+
+      .pet-service-content {
+        padding: 30px 24px;
       }
 
       .calculator,
@@ -803,7 +876,6 @@
   <header class="site-header">
     <div class="container navigation">
       <a class="brand" href="#home" aria-label="KoreValet home">
-        <!-- New inline logo. No old logo image is used. -->
         <svg
           class="logo-mark"
           viewBox="0 0 100 55"
@@ -879,7 +951,7 @@
         <div>
           <div class="eyebrow">DFW apartment communities</div>
 
-          <h1>A cleaner community starts at the doorstep.</h1>
+          <h1>Better service starts at the doorstep.</h1>
 
           <p class="hero-copy">
             KoreValet provides dependable doorstep trash collection for apartment communities while helping property teams deliver a cleaner, more convenient resident experience.
@@ -897,11 +969,11 @@
         </div>
 
         <div>
-         <img
-  class="hero-photo"
-  src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1800&q=85"
-  alt="Modern apartment community exterior"
->
+          <img
+            class="hero-photo"
+            src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1100&q=85"
+            alt="Modern apartment community exterior"
+          >
         </div>
       </div>
     </section>
@@ -941,61 +1013,96 @@
           </p>
         </div>
 
-        <div class="services-grid">
-  <article class="service-card">
-  <img
-    src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=850&q=85"
-    alt="Luxury apartment living room with modern furnishings"
-    loading="lazy"
-  >
+        <!-- There is only one services-grid in this file. -->
 
+        <div class="services-grid">
+          <!-- Card 1: Convenience -->
+          <article class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85"
+              alt="Luxury apartment interior with comfortable living space"
+              loading="lazy"
+            >
 
             <div class="service-content">
               <span class="service-number">01 / CONVENIENCE</span>
 
+              <h3>Everyday convenience</h3>
 
               <p>
-                Give residents a practical amenity that simplifies their routine and adds value to their living experience.
+                Give residents a simple apartment amenity that makes their daily routine easier and more comfortable.
               </p>
             </div>
           </article>
 
+          <!-- Card 2: Doorstep service -->
           <article class="service-card">
-  <img
-    src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=850&q=85"
-    alt="Apartment hallway and apartment entrance"
-    loading="lazy"
-  >
+            <img
+              src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=85"
+              alt="Apartment hallway and entrance area where doorstep collection takes place"
+              loading="lazy"
+            >
 
-  <div class="service-content">
-    <span class="service-number">01 / DOORSTEP SERVICE</span>
+            <div class="service-content">
+              <span class="service-number">02 / DOORSTEP SERVICE</span>
 
-    <h3>Doorstep convenience</h3>
+              <h3>Collected at the door</h3>
 
-    <p>
-      Make daily life easier for residents with dependable collection from outside their apartment doors.
-    </p>
-  </div>
-</article>
+              <p>
+                Residents place secured bags outside their apartment doors for scheduled collection by the KoreValet team.
+              </p>
+            </div>
+          </article>
 
+          <!-- Card 3: Property value -->
           <article class="service-card">
-           <img
-  src="https://images.unsplash.com/photo-1502672023488-70e25813eb80?auto=format&fit=crop&w=850&q=85"
-  alt="Contemporary apartment living space"
-  loading="lazy"
->
+            <img
+              src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=85"
+              alt="Well-maintained apartment community exterior with landscaping"
+              loading="lazy"
+            >
 
             <div class="service-content">
               <span class="service-number">03 / PROPERTY VALUE</span>
 
-              <h3>Stronger amenities</h3>
+              <h3>A stronger community impression</h3>
 
               <p>
-                Position valet trash as a useful, revenue-supporting amenity that helps your property stand out.
+                Consistent valet trash service supports cleaner common areas, stronger curb appeal, and a more attractive property.
               </p>
             </div>
           </article>
         </div>
+
+        <section class="pet-service" aria-labelledby="pet-service-title">
+          <div class="pet-service-grid">
+            <img
+              class="pet-service-image"
+              src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=1000&q=85"
+              alt="Dog enjoying a pet-friendly apartment community"
+              loading="lazy"
+            >
+
+            <div class="pet-service-content">
+              <div class="eyebrow">Additional community support</div>
+
+              <h3 id="pet-service-title">
+                Dog waste stations that stay ready for residents.
+              </h3>
+
+              <p>
+                KoreValet can also help apartment communities maintain dog waste stations and pet relief areas as part of a cleaner, more complete property service plan.
+              </p>
+
+              <ul class="pet-service-list">
+                <li>Dog station trash removal</li>
+                <li>Bag dispenser refills</li>
+                <li>Damaged dispenser replacements</li>
+                <li>Pet area supply checks</li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
 
@@ -1046,6 +1153,18 @@
 
               <p>
                 Proper collection helps keep breezeways and shared areas more orderly for residents, prospects, and staff.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-item">
+            <span class="process-number">04</span>
+
+            <div>
+              <h3>Pet stations stay supplied</h3>
+
+              <p>
+                Dog waste stations can be serviced with trash removal, bag refills, and replacement supplies as needed.
               </p>
             </div>
           </div>
@@ -1182,12 +1301,12 @@
 
             <p>
               <strong>Services:</strong>
-              Apartment valet trash and recycling collection
+              Valet trash, recycling, and dog waste station support
             </p>
           </div>
         </div>
 
-        <!-- Replace YOUR_FORMSPREE_FORM_ID with your actual Formspree ID -->
+        <!-- Replace YOUR_FORMSPREE_FORM_ID with your actual Formspree ID. -->
         <form
           class="contact-form"
           action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID"
@@ -1298,8 +1417,14 @@
               <option value="Book a consultation">
                 Book a consultation
               </option>
-              <option value="Learn about resident services">
-                Learn about resident services
+              <option value="Valet trash service">
+                Valet trash service
+              </option>
+              <option value="Dog waste station service">
+                Dog waste station service
+              </option>
+              <option value="Multiple community services">
+                Multiple community services
               </option>
             </select>
           </div>
