@@ -15,12 +15,14 @@
     <header class="site-header">
         <div class="container nav-container">
             <div class="logo">
-                <span class="logo-text">KORE<strong>VALET</strong></span>
+                <!-- If you uploaded a logo file named logo.png, this will display it. Otherwise it falls back to styled text. -->
+                <img src="logo.png" alt="KoreValet Logo" class="brand-logo" onerror="this.style.display='none';document.getElementById('fallback-logo').style.display='inline';">
+                <span id="fallback-logo" class="logo-text" style="display:none;">KORE<strong>VALET</strong></span>
             </div>
             <nav class="nav-links">
                 <a href="#services">Services</a>
                 <a href="#about">About</a>
-                <a href="#roi">ROI</a>
+                <a href="#roi">ROI Calculator</a>
                 <a href="#contact" class="btn-nav">Get a Quote</a>
             </nav>
         </div>
@@ -32,7 +34,7 @@
             <h1>Elevated Property Stewardship.</h1>
             <p class="hero-subtitle">Providing 7-night doorstep collection and property preservation for North Texas assets that demand excellence.</p>
             <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary">Calculate Your ROI</a>
+                <a href="#roi" class="btn btn-primary">Calculate Your ROI</a>
                 <a href="#services" class="btn btn-secondary">Explore Services</a>
             </div>
         </div>
@@ -65,17 +67,27 @@
         </div>
     </section>
 
-    <!-- ROI / Value Section -->
+    <!-- Interactive ROI Calculator Section -->
     <section id="roi" class="roi-section">
         <div class="container roi-grid">
             <div class="roi-text">
-                <h2>Built for Property Managers Who Value Reliability</h2>
-                <p>Inconsistent service hurts your community's reputation. KoreValet delivers disciplined, accountable doorstep collection backed by professional communication and transparent reporting.</p>
-                <ul class="check-list">
-                    <li>Fully vetted, uniformed professional team</li>
-                    <li>Strict adherence to community guidelines</li>
-                    <li>Direct line to local management</li>
-                </ul>
+                <h2>Calculate Your Community's Value</h2>
+                <p>Valet trash is more than a convenience—it's a high-margin amenity that generates recurring non-tuition/non-rent revenue while protecting your asset's cleanliness.</p>
+                <div class="calculator-box">
+                    <label for="unitRange">Number of Units in Community: <span id="unitCount">150</span></label>
+                    <input type="range" id="unitRange" min="50" max="500" step="10" value="150" oninput="calculateROI()">
+                    
+                    <div class="calc-results">
+                        <div class="calc-output-item">
+                            <span>Estimated Monthly Added Revenue:</span>
+                            <strong id="monthlyRevenue">$3,750</strong>
+                        </div>
+                        <div class="calc-output-item">
+                            <span>Estimated Annual Value:</span>
+                            <strong id="annualRevenue">$45,000</strong>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="roi-stats-box">
                 <div class="stat-item">
@@ -122,5 +134,19 @@
         </div>
     </footer>
 
+    <!-- Interactive ROI Script -->
+    <script>
+        function calculateROI() {
+            const units = document.getElementById('unitRange').value;
+            document.getElementById('unitCount').innerText = units;
+            
+            // Assuming an average net amenity fee capture of $25 per unit/month
+            const monthly = units * 25;
+            const annual = monthly * 12;
+
+            document.getElementById('monthlyRevenue').innerText = '$' + monthly.toLocaleString();
+            document.getElementById('annualRevenue').innerText = '$' + annual.toLocaleString();
+        }
+    </script>
 </body>
 </html>
