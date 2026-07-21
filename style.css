@@ -44,6 +44,12 @@ body {
     height: 80px;
 }
 
+.brand-logo {
+    max-height: 45px;
+    width: auto;
+    display: block;
+}
+
 .logo-text {
     font-size: 1.5rem;
     letter-spacing: 0.05em;
@@ -188,14 +194,14 @@ body {
     color: #475569;
 }
 
-/* ROI Section */
+/* ROI Section & Interactive Calculator */
 .roi-section {
     padding: 6rem 0;
 }
 
 .roi-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 4rem;
     align-items: center;
 }
@@ -203,32 +209,53 @@ body {
 .roi-text h2 {
     font-size: 2.25rem;
     color: var(--primary-navy);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .roi-text p {
     color: #475569;
+    margin-bottom: 2rem;
+}
+
+.calculator-box {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.calculator-box label {
+    display: block;
+    font-weight: 600;
+    color: var(--primary-navy);
+    margin-bottom: 1rem;
+}
+
+.calculator-box input[type="range"] {
+    width: 100%;
     margin-bottom: 1.5rem;
+    accent-color: var(--accent-green);
+    cursor: pointer;
 }
 
-.check-list {
-    list-style: none;
+.calc-results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #cbd5e1;
 }
 
-.check-list li {
-    position: relative;
-    padding-left: 1.75rem;
-    margin-bottom: 0.75rem;
-    color: var(--text-dark);
-    font-weight: 500;
+.calc-output-item span {
+    display: block;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 0.25rem;
 }
 
-.check-list li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
+.calc-output-item strong {
+    font-size: 1.25rem;
     color: var(--accent-green);
-    font-weight: bold;
 }
 
 .roi-stats-box {
@@ -320,5 +347,8 @@ body {
     }
     .nav-links {
         display: none;
+    }
+    .calc-results {
+        grid-template-columns: 1fr;
     }
 }
