@@ -142,21 +142,21 @@
         <div class="container contact-grid">
             <div class="contact-form-box">
                 <h2>Request a Quote</h2>
-                <form>
-                    <div class="form-row">
-                        <input type="text" placeholder="Property Name / Community" required>
-                    </div>
-                    <div class="form-row">
-                        <input type="text" placeholder="Contact Name" required>
-                    </div>
-                    <div class="form-row">
-                        <input type="email" placeholder="Business Email" required>
-                    </div>
-                    <div class="form-row">
-                        <input type="tel" placeholder="Phone Number">
-                    </div>
-                    <button type="submit" class="btn btn-primary full-width">Submit Proposal Request</button>
-                </form>
+               <form action="https://formspree.io/f/your-form-id" method="POST">
+    <div class="form-row">
+        <input type="text" name="property_name" placeholder="Property Name / Community" required>
+    </div>
+    <div class="form-row">
+        <input type="text" name="contact_name" placeholder="Contact Name" required>
+    </div>
+    <div class="form-row">
+        <input type="email" name="email" placeholder="Business Email" required>
+    </div>
+    <div class="form-row">
+        <input type="tel" name="phone" placeholder="Phone Number">
+    </div>
+    <button type="submit" class="btn btn-primary full-width">Submit Proposal Request</button>
+</form>
             </div>
             <div class="contact-info-box">
                 <h3>Contact Us</h3>
