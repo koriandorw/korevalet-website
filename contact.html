@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Request a KoreValet quote or consultation for your DFW apartment community.">
+  <title>Request a Quote | KoreValet</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="KoreValet home">
+        <span class="brand-mark">K</span>
+
+        <span>
+          <span class="brand-name">KOREVALET</span>
+          <span class="brand-subtitle">VALET TRASH & RECYCLING</span>
+        </span>
+      </a>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#process">Our Process</a>
+        <a href="roi.html">Property ROI</a>
+        <a href="contact.html">Contact</a>
+        <a class="button button-dark nav-cta" href="contact.html">Request a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">Start a conversation</div>
+        <h1>Let’s make your community work better.</h1>
+        <p>
+          Request a quote, schedule a consultation, or ask our team about valet trash services for your apartment community.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <div class="eyebrow">Contact KoreValet</div>
+
+          <h2 class="section-title">A cleaner resident experience is one conversation away.</h2>
+
+          <p class="section-copy" style="margin-top: 24px;">
+            Tell us about your property, current service, and goals. Our team will review your information and follow up with next steps.
+          </p>
+
+          <div class="contact-details">
+            <p>
+              <strong>Business:</strong>
+              KoreValet
+            </p>
+
+            <p>
+              <strong>Service area:</strong>
+              Dallas-Fort Worth, Texas
+            </p>
+
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:management@korevalet.com">
+                management@korevalet.com
+              </a>
+            </p>
+
+            <p>
+              <strong>Services:</strong>
+              Apartment valet trash and recycling collection
+            </p>
+          </div>
+        </div>
+
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="_next"
+            value="https://www.korevalet.com/thank-you.html"
+          >
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="New KoreValet property inquiry"
+          >
+
+          <div class="form-row">
+            <div class="field">
+              <label for="propertyName">Property or community name</label>
+              <input id="propertyName" name="property_name" type="text" required>
+            </div>
+
+            <div class="field">
+              <label for="contactName">Your name</label>
+              <input id="contactName" name="contact_name" type="text" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Business email</label>
+              <input id="email" name="email" type="email" required>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="location">Property location</label>
+              <input
+                id="location"
+                name="property_location"
+                type="text"
+                placeholder="City, TX"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="units">Approximate unit count</label>
+              <input id="units" name="unit_count" type="number" min="1" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="requestType">What would you like to do?</label>
+
+            <select id="requestType" name="request_type" required>
+              <option value="">Select one</option>
+              <option value="Request a quote">Request a quote</option>
+              <option value="Book a consultation">Book a consultation</option>
+              <option value="Learn about resident services">
+                Learn about resident services
+              </option>
+              <option value="Discuss an existing service">
+                Discuss an existing service
+              </option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Tell us about your property</label>
+
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Share any details about your current service, goals, or timeline."
+              required
+            ></textarea>
+          </div>
+
+          <button class="button button-primary" type="submit">
+            Send Inquiry
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">K</span>
+
+        <span>
+          <span class="brand-name">KOREVALET</span>
+          <span class="brand-subtitle" style="color: #9eafaa;">
+            VALET TRASH & RECYCLING
+          </span>
+        </span>
+      </a>
+
+      <p>&copy; 2026 KoreValet. Serving the DFW area.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
