@@ -15,7 +15,7 @@
     <header class="site-header">
         <div class="container nav-container">
             <div class="logo">
-                <!-- If you uploaded a logo file named logo.png, this will display it. Otherwise it falls back to styled text. -->
+                <!-- Change 'logo.png' below to match your exact file name uploaded in GitHub if needed -->
                 <img src="logo.png" alt="KoreValet Logo" class="brand-logo" onerror="this.style.display='none';document.getElementById('fallback-logo').style.display='inline';">
                 <span id="fallback-logo" class="logo-text" style="display:none;">KORE<strong>VALET</strong></span>
             </div>
@@ -67,24 +67,32 @@
         </div>
     </section>
 
-    <!-- Interactive ROI Calculator Section -->
+    <!-- Interactive Custom ROI Calculator Section -->
     <section id="roi" class="roi-section">
         <div class="container roi-grid">
             <div class="roi-text">
                 <h2>Calculate Your Community's Value</h2>
-                <p>Valet trash is more than a convenience—it's a high-margin amenity that generates recurring non-tuition/non-rent revenue while protecting your asset's cleanliness.</p>
+                <p>Customize the metrics below to match your community size and desired resident charge rate to evaluate total revenue potential.</p>
+                
                 <div class="calculator-box">
-                    <label for="unitRange">Number of Units in Community: <span id="unitCount">150</span></label>
-                    <input type="range" id="unitRange" min="50" max="500" step="10" value="150" oninput="calculateROI()">
+                    <div class="input-group">
+                        <label for="unitRange">Number of Units: <span id="unitCount" class="highlight-val">150</span></label>
+                        <input type="range" id="unitRange" min="50" max="500" step="10" value="150" oninput="calculateROI()">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="feeInput">Monthly Charge to Resident ($ per unit):</label>
+                        <input type="number" id="feeInput" value="30" min="15" max="60" step="1" oninput="calculateROI()">
+                    </div>
                     
                     <div class="calc-results">
                         <div class="calc-output-item">
-                            <span>Estimated Monthly Added Revenue:</span>
-                            <strong id="monthlyRevenue">$3,750</strong>
+                            <span>Estimated Monthly Revenue:</span>
+                            <strong id="monthlyRevenue">$4,500</strong>
                         </div>
                         <div class="calc-output-item">
-                            <span>Estimated Annual Value:</span>
-                            <strong id="annualRevenue">$45,000</strong>
+                            <span>Estimated Annual Revenue:</span>
+                            <strong id="annualRevenue">$54,000</strong>
                         </div>
                     </div>
                 </div>
@@ -134,14 +142,15 @@
         </div>
     </footer>
 
-    <!-- Interactive ROI Script -->
+    <!-- Interactive Custom Calculation Script -->
     <script>
         function calculateROI() {
             const units = document.getElementById('unitRange').value;
+            const fee = document.getElementById('feeInput').value || 0;
+            
             document.getElementById('unitCount').innerText = units;
             
-            // Assuming an average net amenity fee capture of $25 per unit/month
-            const monthly = units * 25;
+            const monthly = units * fee;
             const annual = monthly * 12;
 
             document.getElementById('monthlyRevenue').innerText = '$' + monthly.toLocaleString();
