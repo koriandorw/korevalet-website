@@ -1,71 +1,42 @@
 <svg
-  width="520"
-  height="112"
-  viewBox="0 0 520 112"
+  width="665"
+  height="145"
+  viewBox="0 0 665 145"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
   role="img"
-  aria-labelledby="title description"
+  aria-labelledby="logoTitle logoDescription"
 >
-  <title id="title">KoreValet logo</title>
-  <desc id="description">
-    Green and orange geometric K logo with KoreValet wordmark
-  </desc>
+  <title id="logoTitle">KoreValet</title>
+  <desc id="logoDescription">KoreValet green and orange geometric K logo</desc>
 
-  <!-- Custom K symbol -->
-  <g transform="translate(8 8)">
-    <!-- Main vertical stroke -->
-    <path
-      d="M8 8V96"
-      stroke="#155B4C"
-      stroke-width="12"
-      stroke-linecap="square"
-    />
+  <!-- Main vertical green bar -->
+  <path
+    d="M21 14H36V140H21V14Z"
+    fill="#155B4C"
+  />
 
-    <!-- Upper diagonal stroke -->
-    <path
-      d="M20 52L70 8"
-      stroke="#155B4C"
-      stroke-width="12"
-      stroke-linecap="square"
-      stroke-linejoin="miter"
-    />
+  <!-- Upper green arm and top terminal -->
+  <path
+    d="M29 61L91 13H129V29H99L39 78L29 61Z"
+    fill="#155B4C"
+  />
 
-    <!-- Lower orange diagonal stroke -->
-    <path
-      d="M20 52L70 96"
-      stroke="#E8844A"
-      stroke-width="12"
-      stroke-linecap="square"
-      stroke-linejoin="miter"
-    />
+  <!-- Lower orange arm and bottom terminal -->
+  <path
+    d="M31 70L42 59L108 124H129V140H101L31 70Z"
+    fill="#E8844A"
+  />
 
-    <!-- Small green top extension -->
-    <path
-      d="M63 8H82"
-      stroke="#155B4C"
-      stroke-width="12"
-      stroke-linecap="square"
-    />
-
-    <!-- Small orange bottom extension -->
-    <path
-      d="M63 96H82"
-      stroke="#E8844A"
-      stroke-width="12"
-      stroke-linecap="square"
-    />
-  </g>
-
-  <!-- KoreValet wordmark -->
+  <!-- Wordmark -->
   <text
-    x="112"
-    y="68"
+    x="151"
+    y="87"
     fill="#173B35"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="43"
+    font-size="53"
     font-weight="700"
-    letter-spacing="-1.8"
+    letter-spacing="-2"
   >
     KoreValet
   </text>
