@@ -1,85 +1,72 @@
 <svg
-  width="560"
-  height="140"
-  viewBox="0 0 560 140"
+  width="520"
+  height="112"
+  viewBox="0 0 520 112"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
   role="img"
-  aria-labelledby="logo-title logo-description"
+  aria-labelledby="title description"
 >
-  <title id="logo-title">KoreValet</title>
-  <desc id="logo-description">
-    KoreValet logo with a modern slate blue and silver geometric K
+  <title id="title">KoreValet logo</title>
+  <desc id="description">
+    Green and orange geometric K logo with KoreValet wordmark
   </desc>
 
-  <!-- Logo mark -->
-  <g transform="translate(8 10)">
-    <!-- Green vertical stem -->
+  <!-- Custom K symbol -->
+  <g transform="translate(8 8)">
+    <!-- Main vertical stroke -->
     <path
-      d="M12 12V108"
+      d="M8 8V96"
       stroke="#155B4C"
-      stroke-width="15"
+      stroke-width="12"
       stroke-linecap="square"
     />
 
-    <!-- Green upper arm -->
+    <!-- Upper diagonal stroke -->
     <path
-      d="M27 61L82 12"
+      d="M20 52L70 8"
       stroke="#155B4C"
-      stroke-width="15"
+      stroke-width="12"
       stroke-linecap="square"
       stroke-linejoin="miter"
     />
 
-    <!-- Orange lower arm -->
+    <!-- Lower orange diagonal stroke -->
     <path
-      d="M27 61L84 108"
+      d="M20 52L70 96"
       stroke="#E8844A"
-      stroke-width="15"
+      stroke-width="12"
       stroke-linecap="square"
       stroke-linejoin="miter"
     />
 
-    <!-- Small green terminal detail -->
+    <!-- Small green top extension -->
     <path
-      d="M75 12H91"
+      d="M63 8H82"
       stroke="#155B4C"
-      stroke-width="15"
+      stroke-width="12"
       stroke-linecap="square"
     />
 
-    <!-- Small orange terminal detail -->
+    <!-- Small orange bottom extension -->
     <path
-      d="M77 108H93"
+      d="M63 96H82"
       stroke="#E8844A"
-      stroke-width="15"
+      stroke-width="12"
       stroke-linecap="square"
     />
   </g>
 
-  <!-- Wordmark -->
+  <!-- KoreValet wordmark -->
   <text
-    x="128"
-    y="76"
+    x="112"
+    y="68"
     fill="#173B35"
-    font-family="Trebuchet MS, Arial, sans-serif"
-    font-size="52"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="43"
     font-weight="700"
-    letter-spacing="-1.5"
+    letter-spacing="-1.8"
   >
     KoreValet
-  </text>
-
-  <!-- Descriptor -->
-  <text
-    x="132"
-    y="105"
-    fill="#6A7973"
-    font-family="Arial, Helvetica, sans-serif"
-    font-size="12"
-    font-weight="700"
-    letter-spacing="2.4"
-  >
-    VALET TRASH &amp; RECYCLING
   </text>
 </svg>
