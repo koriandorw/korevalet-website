@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -35,10 +35,10 @@
       scroll-behavior: smooth;
     }
 
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: "DM Sans", Arial, sans-serif;
+      body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Manrope", Arial, sans-serif;
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -84,7 +84,7 @@
     }
 
     .section-title {
-      font-family: "Space Grotesk", Arial, sans-serif;
+      font-family: "Sora", Arial, sans-serif;
       font-size: clamp(2.3rem, 5vw, 4.4rem);
       letter-spacing: -0.06em;
       line-height: 0.98;
@@ -629,45 +629,51 @@
       font-weight: 700;
     }
 
-    .contact-form {
-      background: var(--white);
-      box-shadow: var(--shadow);
-      padding: 36px;
-    }
+   .contact-form .field label {
+  color: var(--ink);
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+}
 
-    .form-row {
-      display: grid;
-      gap: 16px;
-      grid-template-columns: 1fr 1fr;
-    }
+.contact-form .field input,
+.contact-form .field select,
+.contact-form .field textarea {
+  background: #fffdfa;
+  border: 1px solid #b7c4bd;
+  border-radius: 6px;
+  color: var(--ink);
+  min-height: 52px;
+  padding: 13px 15px;
+  transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
 
-    .contact-form .field label {
-      color: var(--ink);
-    }
+.contact-form .field input::placeholder,
+.contact-form .field textarea::placeholder {
+  color: #82908a;
+}
 
-    .contact-form textarea {
-      min-height: 125px;
-      resize: vertical;
-    }
+.contact-form .field input:hover,
+.contact-form .field select:hover,
+.contact-form .field textarea:hover {
+  border-color: var(--green);
+}
 
-    .contact-form .button {
-      border: 0;
-      width: 100%;
-    }
+.contact-form .field input:focus,
+.contact-form .field select:focus,
+.contact-form .field textarea:focus {
+  background: var(--white);
+  border-color: var(--orange);
+  box-shadow: 0 0 0 4px rgba(232, 132, 74, 0.16);
+  outline: none;
+}
 
-    /* Footer */
-
-    .footer {
-      background: var(--ink);
-      color: var(--white);
-      padding: 30px 0;
-    }
-
-    .footer-inner {
-      align-items: center;
-      display: flex;
-      justify-content: space-between;
-    }
+.contact-form textarea {
+  min-height: 135px;
+  resize: vertical;
+}
 
     .footer p {
       color: #9eafaa;
