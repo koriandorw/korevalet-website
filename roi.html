@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Estimate the potential revenue and ROI of a KoreValet valet trash program for your apartment community.">
+  <title>Property ROI Calculator | KoreValet</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="KoreValet home">
+        <span class="brand-mark">K</span>
+
+        <span>
+          <span class="brand-name">KOREVALET</span>
+          <span class="brand-subtitle">VALET TRASH & RECYCLING</span>
+        </span>
+      </a>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#process">Our Process</a>
+        <a href="roi.html">Property ROI</a>
+        <a href="contact.html">Contact</a>
+        <a class="button button-dark nav-cta" href="contact.html">Request a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">For property managers</div>
+        <h1>See what your community’s amenity could be worth.</h1>
+        <p>
+          Use the calculator to estimate revenue, operating cost, annual profit, and ROI margin for a valet trash program.
+        </p>
+      </div>
+    </section>
+
+    <section class="calculator-section">
+      <div class="container calculator-grid">
+        <div class="calculator-intro">
+          <div class="eyebrow">Community ROI estimate</div>
+
+          <h2 class="section-title">Build a clearer property case.</h2>
+
+          <p class="section-copy" style="margin-top: 24px;">
+            A dependable valet trash program can improve resident convenience while creating an additional amenity revenue opportunity for apartment communities.
+          </p>
+
+          <p class="calculator-note">
+            This calculator is for planning purposes only. Actual pricing and costs depend on your location, unit count, collection schedule, and community requirements.
+          </p>
+
+          <a class="button button-primary" href="contact.html" style="margin-top: 30px;">
+            Request a Custom Proposal
+          </a>
+        </div>
+
+        <div class="calculator">
+          <h2>Property ROI calculator</h2>
+
+          <div class="field">
+            <label for="unitRange">Number of apartment units</label>
+
+            <div class="range-row">
+              <input id="unitRange" type="range" min="50" max="1000" step="10" value="250">
+              <span class="range-value" id="unitValue">250</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="residentFee">Monthly charge to each resident</label>
+            <input id="residentFee" type="number" min="0" step="1" value="30">
+          </div>
+
+          <div class="field">
+            <label for="serviceCost">Estimated service cost per unit</label>
+            <input id="serviceCost" type="number" min="0" step="1" value="12">
+          </div>
+
+          <div class="results">
+            <div class="result">
+              <span>Estimated monthly revenue</span>
+              <strong id="monthlyRevenue">$7,500</strong>
+            </div>
+
+            <div class="result">
+              <span>Estimated monthly service cost</span>
+              <strong id="monthlyCost">$3,000</strong>
+            </div>
+
+            <div class="result highlight">
+              <span>Estimated monthly profit</span>
+              <strong id="monthlyProfit">$4,500</strong>
+            </div>
+
+            <div class="result highlight">
+              <span>Estimated annual profit</span>
+              <strong id="annualProfit">$54,000</strong>
+            </div>
+
+            <div class="result highlight">
+              <span>Estimated ROI margin</span>
+              <strong id="roiPercent">60%</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="container">
+        <div class="services-header">
+          <div>
+            <div class="eyebrow">Why property teams choose KoreValet</div>
+            <h2 class="section-title">The value is more than a number.</h2>
+          </div>
+
+          <p class="section-copy">
+            Cleaner common areas, resident convenience, and a stronger amenity package can all support the long-term performance of your community.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=85"
+              alt="Bright modern apartment living room"
+              loading="lazy"
+            >
+
+            <div class="service-content">
+              <span class="service-number">01 / RETENTION</span>
+              <h3>Improve resident experience</h3>
+              <p>
+                Offer a convenient amenity residents can appreciate every week.
+              </p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?auto=format&fit=crop&w=800&q=85"
+              alt="Apartment building exterior"
+              loading="lazy"
+            >
+
+            <div class="service-content">
+              <span class="service-number">02 / CURB APPEAL</span>
+              <h3>Support cleaner communities</h3>
+              <p>
+                Consistent collection can help reduce overflow and improve property presentation.
+              </p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=85"
+              alt="Well-designed apartment interior"
+              loading="lazy"
+            >
+
+            <div class="service-content">
+              <span class="service-number">03 / AMENITIES</span>
+              <h3>Strengthen your offering</h3>
+              <p>
+                Give prospects another practical reason to choose your community.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">K</span>
+
+        <span>
+          <span class="brand-name">KOREVALET</span>
+          <span class="brand-subtitle" style="color: #9eafaa;">
+            VALET TRASH & RECYCLING
+          </span>
+        </span>
+      </a>
+
+      <p>&copy; 2026 KoreValet. Serving the DFW area.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
