@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KoreValet | Elevated Property Stewardship & Valet Trash</title>
+    <title>KoreValet | Reliable Door-to-Door Trash & Recycling for DFW</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,134 +15,176 @@
     <header class="site-header">
         <div class="container nav-container">
             <div class="logo">
-                <!-- Change 'logo.png' below to match your exact file name uploaded in GitHub if needed -->
                 <img src="logo.png" alt="KoreValet Logo" class="brand-logo" onerror="this.style.display='none';document.getElementById('fallback-logo').style.display='inline';">
-                <span id="fallback-logo" class="logo-text" style="display:none;">KORE<strong>VALET</strong></span>
+                <span id="fallback-logo" class="logo-text" style="display:none;">Kore<strong>Valet</strong></span>
             </div>
             <nav class="nav-links">
-                <a href="#services">Services</a>
-                <a href="#about">About</a>
-                <a href="#roi">ROI Calculator</a>
-                <a href="#contact" class="btn-nav">Get a Quote</a>
+                <a href="#home">Home</a>
+                <a href="#process">Our Process</a>
+                <a href="#services">Resident Services</a>
+                <a href="#roi">Property Managers</a>
+                <a href="#contact" class="btn-nav">Request a Quote</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Elevated Property Stewardship.</h1>
-            <p class="hero-subtitle">Providing 7-night doorstep collection and property preservation for North Texas assets that demand excellence.</p>
-            <div class="hero-cta">
-                <a href="#roi" class="btn btn-primary">Calculate Your ROI</a>
-                <a href="#services" class="btn btn-secondary">Explore Services</a>
+    <section id="home" class="hero-banner">
+        <div class="container hero-grid">
+            <div class="hero-text-content">
+                <h1>Reliable Door-to-Door Trash & Recycling for DFW Communities</h1>
+                <p>Elevating property stewardship and resident retention with disciplined 7-night doorstep collection.</p>
+                <div class="hero-cta">
+                    <a href="#roi" class="btn btn-primary">Calculate Your ROI</a>
+                    <a href="#contact" class="btn btn-secondary">Request a Quote</a>
+                </div>
+            </div>
+            <div class="hero-image-box">
+                <!-- Drop hero-banner.jpg into GitHub or it falls back to professional stock -->
+                <img src="hero-banner.jpg" alt="KoreValet Professional Valet Trash Service" class="hero-banner-img" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'">
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <!-- The KoreValet Advantage -->
+    <section class="advantage-section">
         <div class="container">
-            <div class="section-title">
-                <h2>Tailored Property Solutions</h2>
-                <p>Designed to maximize resident retention and community cleanliness.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="card-icon">🗑️</div>
-                    <h3>7-Night Doorstep Collection</h3>
-                    <p>Reliable, scheduled nightly valet trash service directly from resident doors, keeping breezeways spotless.</p>
+            <h2 class="section-heading">The KoreValet Advantage</h2>
+            <div class="advantage-grid">
+                <div class="advantage-card">
+                    <div class="adv-icon">🗑️</div>
+                    <h3>Efficient Collection</h3>
+                    <p>Efficient collection with trash at and recycling-aware communities.</p>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon">🏢</div>
-                    <h3>Property Stewardship</h3>
-                    <p>Proactive common area upkeep and thorough grounds care that elevates curb appeal from day one.</p>
+                <div class="advantage-card">
+                    <div class="adv-icon">⏱️</div>
+                    <h3>Consistent Schedule</h3>
+                    <p>Consistent schedule and consistent service all-year-every community.</p>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon">📊</div>
-                    <h3>Resident Retention Insights</h3>
-                    <p>Value-added services that translate directly into higher renewal rates and clean, desirable communities.</p>
+                <div class="advantage-card">
+                    <div class="adv-icon">🤝</div>
+                    <h3>Enhanced Property Value</h3>
+                    <p>Enhanced property market grade and property company value.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Interactive Custom ROI Calculator Section -->
-    <section id="roi" class="roi-section">
-        <div class="container roi-grid">
-            <div class="roi-text">
-                <h2>Calculate Your Community's Value</h2>
-                <p>Customize the metrics below to match your community size and desired resident charge rate to evaluate total revenue potential.</p>
-                
-                <div class="calculator-box">
-                    <div class="input-group">
-                        <label for="unitRange">Number of Units: <span id="unitCount" class="highlight-val">150</span></label>
-                        <input type="range" id="unitRange" min="50" max="500" step="10" value="150" oninput="calculateROI()">
-                    </div>
+    <!-- How It Works Section -->
+    <section id="process" class="process-section">
+        <div class="container">
+            <h2 class="section-heading">How It Works</h2>
+            <div class="process-grid">
+                <div class="process-step">
+                    <span class="step-num">1</span>
+                    <h3>Residents Bag</h3>
+                    <p>Residents place secured bags in designated bins inside their apartment homes.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-num">2</span>
+                    <h3>We Collect</h3>
+                    <p>Vetted, uniformed professionals collect waste directly from doors on schedule.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-num">3</span>
+                    <h3>Return Bin</h3>
+                    <p>Bins are cleanly returned to homes by morning, keeping breezeways pristine.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="input-group">
-                        <label for="feeInput">Monthly Charge to Resident ($ per unit):</label>
-                        <input type="number" id="feeInput" value="30" min="15" max="60" step="1" oninput="calculateROI()">
+    <!-- Interactive ROI Calculator Section -->
+    <section id="roi" class="roi-section">
+        <div class="container">
+            <h2 class="section-heading">Property Manager ROI Calculator</h2>
+            <p class="section-sub">Evaluate your community's revenue potential and asset enhancement.</p>
+            
+            <div class="calculator-wrapper">
+                <div class="input-group">
+                    <label for="unitRange">Number of Units: <span id="unitCount" class="highlight-val">150</span></label>
+                    <input type="range" id="unitRange" min="50" max="500" step="10" value="150" oninput="calculateROI()">
+                </div>
+
+                <div class="input-group">
+                    <label for="feeInput">Monthly Charge to Resident ($ per unit):</label>
+                    <input type="number" id="feeInput" value="30" min="15" max="60" step="1" oninput="calculateROI()">
+                </div>
+                
+                <div class="calc-results">
+                    <div class="calc-output-item">
+                        <span>Estimated Monthly Revenue:</span>
+                        <strong id="monthlyRevenue">$4,500</strong>
                     </div>
-                    
-                    <div class="calc-results">
-                        <div class="calc-output-item">
-                            <span>Estimated Monthly Revenue:</span>
-                            <strong id="monthlyRevenue">$4,500</strong>
-                        </div>
-                        <div class="calc-output-item">
-                            <span>Estimated Annual Revenue:</span>
-                            <strong id="annualRevenue">$54,000</strong>
-                        </div>
+                    <div class="calc-output-item">
+                        <span>Estimated Annual Revenue:</span>
+                        <strong id="annualRevenue">$54,000</strong>
                     </div>
                 </div>
             </div>
-            <div class="roi-stats-box">
-                <div class="stat-item">
-                    <span class="stat-number">7</span>
-                    <span class="stat-label">Nights a Week Service</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Local North Texas Focus</span>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-heading">Testimonials</h2>
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"KoreValet wanted to feed peeps, so they wamdemen and give towinsommanst else everyone for sales, and service so was doc socimons."</p>
+                <div class="testimonial-author">
+                    <img src="testimonial-sarah.jpg" alt="Sarah J." class="author-img" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80'">
+                    <div>
+                        <strong>Sarah J.</strong>
+                        <span>DFW Property Manager</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container contact-container">
-            <div class="section-title">
-                <h2>Secure Your Property's Quote</h2>
-                <p>Ready to upgrade your community's waste stream management? Let's connect.</p>
+    <section id="contact" class="contact-section">
+        <div class="container contact-grid">
+            <div class="contact-form-box">
+                <h2>Request a Quote</h2>
+                <form>
+                    <div class="form-row">
+                        <input type="text" placeholder="Property Name / Community" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" placeholder="Contact Name" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="email" placeholder="Business Email" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="tel" placeholder="Phone Number">
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">Submit Proposal Request</button>
+                </form>
             </div>
-            <form class="contact-form">
-                <div class="form-group">
-                    <input type="text" placeholder="Property Name / Community" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" placeholder="Contact Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Business Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="Phone Number">
-                </div>
-                <button type="submit" class="btn btn-primary full-width">Request Proposal</button>
-            </form>
+            <div class="contact-info-box">
+                <h3>Contact Us</h3>
+                <p>📞 532-336-5590</p>
+                <p>📧 evrival@korevalet.com</p>
+                <p>📍 1233 Namace Street, McKinney, 35931</p>
+                
+                <h3 class="social-heading">Social Media</h3>
+                <p>f KoreValet</p>
+                <p>ig KoreValet</p>
+                <p>in KoreValet</p>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container footer-content">
-            <p>&copy; 2026 KoreValet. All rights reserved. Serving the Dallas-Fort Worth Area.</p>
+            <p>&copy; 2026 KoreValet. All Rights Reserved. Est. 2026</p>
         </div>
     </footer>
 
-    <!-- Interactive Custom Calculation Script -->
+    <!-- Interactive Calculation Script -->
     <script>
         function calculateROI() {
             const units = document.getElementById('unitRange').value;
