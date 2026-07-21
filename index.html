@@ -1,195 +1,850 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KoreValet | Reliable Door-to-Door Trash & Recycling for DFW Communities</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KoreValet provides dependable doorstep trash and recycling collection for apartment communities across the DFW area.">
+  <title>KoreValet | Valet Trash & Recycling</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green-dark: #123b31;
+      --green: #1f604b;
+      --orange: #e8844a;
+      --cream: #f5f2eb;
+      --paper: #fffdf8;
+      --ink: #14221f;
+      --muted: #53645e;
+      --mint: #dcebe1;
+      --line: #d8ded6;
+      --white: #ffffff;
+      --shadow: 0 22px 55px rgba(20, 34, 31, 0.13);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      margin: 0 auto;
+      width: min(1160px, calc(100% - 40px));
+    }
+
+    .eyebrow {
+      align-items: center;
+      color: var(--orange);
+      display: flex;
+      font-size: 0.74rem;
+      font-weight: 700;
+      gap: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      background: var(--orange);
+      content: "";
+      height: 2px;
+      width: 28px;
+    }
+
+    .section-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      letter-spacing: -0.06em;
+      line-height: 0.98;
+      max-width: 700px;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      font-size: 1.04rem;
+      max-width: 560px;
+    }
+
+    .button {
+      align-items: center;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-flex;
+      font-size: 0.9rem;
+      font-weight: 700;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      transition: 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .button-primary:hover {
+      background: #c96b37;
+    }
+
+    .button-dark {
+      background: var(--green-dark);
+      color: var(--white);
+    }
+
+    .button-dark:hover {
+      background: var(--green);
+    }
+
+    .button-outline {
+      border-color: rgba(255, 255, 255, 0.48);
+      color: var(--white);
+    }
+
+    .button-outline:hover {
+      background: var(--white);
+      color: var(--green-dark);
+    }
+
+    /* Header */
+    .site-header {
+      background: rgba(255, 253, 248, 0.95);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      align-items: center;
+      display: flex;
+      height: 78px;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .brand {
+      align-items: center;
+      display: inline-flex;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      align-items: center;
+      background: var(--green-dark);
+      color: var(--white);
+      display: flex;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      height: 42px;
+      justify-content: center;
+      position: relative;
+      width: 42px;
+    }
+
+    .brand-mark::after {
+      background: var(--orange);
+      bottom: 0;
+      content: "";
+      height: 5px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    .brand-name {
+      display: block;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      line-height: 1;
+    }
+
+    .brand-subtitle {
+      color: var(--muted);
+      display: block;
+      font-size: 0.57rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      align-items: center;
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+    .nav-links .nav-cta {
+      color: var(--white);
+      min-height: 42px;
+      padding: 0 17px;
+    }
+
+    .menu-button {
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      display: none;
+      padding: 8px;
+    }
+
+    .menu-button span {
+      background: var(--ink);
+      display: block;
+      height: 2px;
+      margin: 5px 0;
+      width: 25px;
+    }
+
+    /* Hero */
+    .hero {
+      background: var(--green-dark);
+      color: var(--white);
+      overflow: hidden;
+      padding: 92px 0 100px;
+      position: relative;
+    }
+
+    .hero::after {
+      background: var(--orange);
+      border-radius: 50%;
+      content: "";
+      height: 510px;
+      opacity: 0.14;
+      position: absolute;
+      right: -180px;
+      top: -190px;
+      width: 510px;
+    }
+
+    .hero-grid {
+      align-items: center;
+      display: grid;
+      gap: 70px;
+      grid-template-columns: 0.95fr 1.05fr;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content {
+      animation: rise 700ms ease both;
+    }
+
+    .hero h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(3rem, 6vw, 5.7rem);
+      letter-spacing: -0.07em;
+      line-height: 0.96;
+      margin: 22px 0;
+    }
+
+    .hero-copy {
+      color: #c9dbd2;
+      font-size: 1.08rem;
+      max-width: 490px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .hero-image-wrap {
+      animation: rise 700ms 120ms ease both;
+      position: relative;
+    }
+
+    .hero-image-wrap::before {
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      content: "";
+      height: 100%;
+      left: -14px;
+      position: absolute;
+      top: 14px;
+      width: 100%;
+    }
+
+    .hero-image {
+      aspect-ratio: 4 / 4.5;
+      object-fit: cover;
+      position: relative;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .hero-stamp {
+      background: var(--orange);
+      bottom: 24px;
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 14px 17px;
+      position: absolute;
+      right: -20px;
+      text-transform: uppercase;
+      transform: rotate(-4deg);
+      z-index: 2;
+    }
+
+    /* Stats */
+    .stats {
+      background: var(--cream);
+      border-bottom: 1px solid var(--line);
+      border-top: 1px solid var(--line);
+      padding: 25px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .stat {
+      align-items: center;
+      display: flex;
+      gap: 15px;
+    }
+
+    .stat strong {
+      color: var(--green);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.6rem;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.25;
+    }
+
+    /* Services */
+    .services {
+      padding: 115px 0;
+    }
+
+    .services-header {
+      align-items: end;
+      display: flex;
+      gap: 35px;
+      justify-content: space-between;
+      margin-bottom: 48px;
+    }
+
+    .services-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .service-card {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      transition: 220ms ease;
+    }
+
+    .service-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-7px);
+    }
+
+    .service-card img {
+      height: 220px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .service-content {
+      padding: 27px;
+    }
+
+    .service-number {
+      color: var(--orange);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .service-card h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.45rem;
+      margin: 12px 0 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* Process */
+    .process {
+      background: var(--mint);
+      padding: 110px 0;
+    }
+
+    .process-grid {
+      display: grid;
+      gap: 55px;
+      grid-template-columns: 0.8fr 1.2fr;
+    }
+
+    .process-list {
+      border-top: 1px solid rgba(20, 34, 31, 0.2);
+      margin-top: 10px;
+    }
+
+    .process-item {
+      border-bottom: 1px solid rgba(20, 34, 31, 0.2);
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 45px 1fr;
+      padding: 25px 0;
+    }
+
+    .process-number {
+      color: var(--orange);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .process-item h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.25rem;
+      margin-bottom: 5px;
+    }
+
+    .process-item p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* Calculator */
+    .calculator-section {
+      padding: 115px 0;
+    }
+
+    .calculator-grid {
+      align-items: start;
+      display: grid;
+      gap: 70px;
+      grid-template-columns: 0.75fr 1.25fr;
+    }
+
+    .calculator-intro .section-title {
+      margin: 20px 0;
+    }
+
+    .calculator-note {
+      border-left: 3px solid var(--orange);
+      color: var(--muted);
+      font-size: 0.87rem;
+      margin-top: 30px;
+      padding-left: 15px;
+    }
+
+    .calculator {
+      background: var(--green-dark);
+      color: var(--white);
+      padding: 36px;
+    }
+
+    .calculator h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 26px;
+    }
+
+    .field {
+      margin-bottom: 20px;
+    }
+
+    .field label {
+      color: #d3e2da;
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      background: var(--white);
+      border: 1px solid transparent;
+      border-radius: 4px;
+      color: var(--ink);
+      min-height: 48px;
+      padding: 12px 13px;
+      width: 100%;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--orange);
+      outline: 3px solid rgba(232, 132, 74, 0.25);
+    }
+
+    .range-row {
+      align-items: center;
+      display: flex;
+      gap: 15px;
+    }
+
+    .range-row input[type="range"] {
+      accent-color: var(--orange);
+      flex: 1;
+      min-height: auto;
+      padding: 0;
+    }
+
+    .range-value {
+      background: var(--orange);
+      border-radius: 4px;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      min-width: 55px;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .results {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 28px;
+      padding-top: 24px;
+    }
+
+    .result {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 15px;
+    }
+
+    .result span {
+      color: #b4cbc0;
+      display: block;
+      font-size: 0.73rem;
+      margin-bottom: 4px;
+    }
+
+    .result strong {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.35rem;
+    }
+
+    .result.highlight strong {
+      color: #ffad7b;
+    }
+
+    /* Contact */
+    .contact {
+      background: var(--cream);
+      padding: 115px 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 70px;
+      grid-template-columns: 0.8fr 1.2fr;
+    }
+
+    .contact-copy .section-title {
+      margin: 20px 0;
+    }
+
+    .contact-details {
+      border-top: 1px solid var(--line);
+      margin-top: 35px;
+      padding-top: 25px;
+    }
+
+    .contact-details p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 9px;
+    }
+
+    .contact-details a {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .contact-form {
+      background: var(--white);
+      box-shadow: var(--shadow);
+      padding: 36px;
+    }
+
+    .form-row {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-form .field label {
+      color: var(--ink);
+    }
+
+    .contact-form textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    .contact-form .button {
+      border: 0;
+      width: 100%;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--ink);
+      color: var(--white);
+      padding: 30px 0;
+    }
+
+    .footer-inner {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .footer p {
+      color: #9eafaa;
+      font-size: 0.8rem;
+    }
+
+    /* Motion */
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .process-grid,
+      .calculator-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 70px 0 85px;
+      }
+
+      .hero-image-wrap {
+        max-width: 590px;
+      }
+
+      .services,
+      .process,
+      .calculator-section,
+      .contact {
+        padding: 80px 0;
+      }
+
+      .calculator-grid,
+      .contact-grid {
+        gap: 42px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 30px, 1160px);
+      }
+
+      .nav {
+        height: 68px;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        align-items: stretch;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        left: 0;
+        padding: 10px 15px 18px;
+        position: absolute;
+        right: 0;
+        top: 68px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 13px 0;
+      }
+
+      .nav-links .nav-cta {
+        margin-top: 5px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.7rem, 14vw, 4rem);
+      }
+
+      .hero-stamp {
+        bottom: 13px;
+        right: 10px;
+      }
+
+      .stats-grid,
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 16px;
+      }
+
+      .stat:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .services-header {
+        align-items: start;
+        flex-direction: column;
+        margin-bottom: 30px;
+      }
+
+      .calculator,
+      .contact-form {
+        padding: 24px;
+      }
+
+      .form-row,
+      .results {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        align-items: start;
+        flex-direction: column;
+        gap: 18px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="KoreValet home">
+        <span class="brand-mark">K</span>
+        <span>
+          <span class="brand-name">KOREVALET</span>
+          <span class="brand-subtitle">VALET TRASH & RECYCLING</span>
+        </span>
+      </a>
 
-    <!-- Header / Navigation -->
-    <header class="site-header">
-        <div class="container nav-container">
-            <a href="#home" class="kore-logo-badge">
-    <div class="logo-icon-box">K</div>
-    <div class="logo-text-stack">
-        <span class="brand-name">KORE<strong>VALET</strong></span>
-        <span class="brand-sub">VALET TRASH & RECYCLING</span>
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#calculator">Property ROI</a>
+        <a class="button button-dark nav-cta" href="#contact">Request a Quote</a>
+      </nav>
     </div>
-</a>
-            <nav class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#process">Our Process</a>
-                <a href="#services">Resident Services</a>
-                <a href="#roi">Property Managers</a>
-                <a href="#contact" class="btn-nav">Request a Quote</a>
-            </nav>
-        </div>
-    </header>
+  </header>
 
-    <!-- Hero Section with Background Overlay Effect -->
-    <section id="home" class="hero-banner" style="background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;">
-        <div class="container hero-grid">
-            <div class="hero-text-content">
-                <h1>Reliable Door-to-Door Trash & Recycling for DFW Communities</h1>
-                <p>Elevating property stewardship and resident retention with disciplined 7-night doorstep collection.</p>
-                <div class="hero-cta">
-                    <a href="#roi" class="btn btn-primary">Calculate Your ROI</a>
-                    <a href="#contact" class="btn btn-secondary">Request a Quote</a>
-                </div>
-            </div>
-            <div class="hero-image-box hover-effect-card">
-               <img src="hero-banner.jpg" alt="Modern Apartment Community Exterior" class="hero-banner-img" onerror="this.src='https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&q=80'">
-                <div class="image-overlay-badge">✨ DFW Premier Valet Service</div>
-            </div>
-        </div>
-    </section>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow">DFW apartment communities</div>
 
-    <!-- The KoreValet Advantage with Controlled Image Cards -->
-    <section class="advantage-section" id="services">
-        <div class="container">
-            <h2 class="section-heading">The KoreValet Advantage</h2>
-            <div class="advantage-grid">
-                <div class="image-card-effect">
-                    <div class="card-img-wrapper">
-                        <img src="collection.jpg" alt="Efficient Collection" onerror="this.src='https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=400&q=80'">
-                    </div>
-                    <div class="card-content">
-                        <h3>Efficient Collection</h3>
-                        <p>Efficient collection with trash at and recycling-aware communities.</p>
-                    </div>
-                </div>
-                <div class="image-card-effect">
-                    <div class="card-img-wrapper">
-                        <img src="schedule.jpg" alt="Consistent Schedule" onerror="this.src='https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=400&q=80'">
-                    </div>
-                    <div class="card-content">
-                        <h3>Consistent Schedule</h3>
-                        <p>Consistent schedule and consistent service all-year-every community.</p>
-                    </div>
-                </div>
-                <div class="image-card-effect">
-                    <div class="card-img-wrapper">
-                        <img src="value.jpg" alt="Enhanced Property Value" onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&q=80'">
-                    </div>
-                    <div class="card-content">
-                        <h3>Enhanced Property Value</h3>
-                        <p>Enhanced property market grade and property company value.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+          <h1>A cleaner community starts at the doorstep.</h1>
 
-    <!-- How It Works Section -->
-    <section id="process" class="process-section">
-        <div class="container">
-            <h2 class="section-heading">How It Works</h2>
-            <div class="process-grid">
-                <div class="process-step">
-                    <span class="step-num">1</span>
-                    <h3>Residents Bag</h3>
-                    <p>Residents place secured bags in designated bins inside their apartment homes.</p>
-                </div>
-                <div class="process-step">
-                    <span class="step-num">2</span>
-                    <h3>We Collect</h3>
-                    <p>Vetted, uniformed professionals collect waste directly from doors on schedule.</p>
-                </div>
-                <div class="process-step">
-                    <span class="step-num">3</span>
-                    <h3>Return Bin</h3>
-                    <p>Bins are cleanly returned to homes by morning, keeping breezeways pristine.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+          <p class="hero-copy">
+            KoreValet gives apartment residents dependable doorstep trash collection while helping property teams improve the resident experience and create measurable value.
+          </p>
 
-    <!-- Interactive ROI Calculator Section -->
-    <section id="roi" class="roi-section">
-        <div class="container">
-            <h2 class="section-heading">Property Manager ROI Calculator</h2>
-            <p class="section-sub">Evaluate your community's revenue potential and asset enhancement.</p>
-            
-            <div class="calculator-wrapper">
-                <div class="input-group">
-                    <label for="unitRange">Number of Units: <span id="unitCount" class="highlight-val">150</span></label>
-                    <input type="range" id="unitRange" min="50" max="500" step="10" value="150" oninput="calculateROI()">
-                </div>
-
-                <div class="input-group">
-                    <label for="feeInput">Monthly Charge to Resident ($ per unit):</label>
-                    <input type="number" id="feeInput" value="30" min="15" max="60" step="1" oninput="calculateROI()">
-                </div>
-                
-                <div class="calc-results">
-                    <div class="calc-output-item">
-                        <span>Estimated Monthly Revenue:</span>
-                        <strong id="monthlyRevenue">$4,500</strong>
-                    </div>
-                    <div class="calc-output-item">
-                        <span>Estimated Annual Revenue:</span>
-                        <strong id="annualRevenue">$54,000</strong>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container contact-grid">
-            <div class="contact-form-box">
-                <h2>Request a Quote</h2>
-               <form action="https://formspree.io/f/mjgnopaq" method="POST">
-    <div class="form-row">
-        <input type="text" name="property_name" placeholder="Property Name / Community" required>
-    </div>
-    <div class="form-row">
-        <input type="text" name="contact_name" placeholder="Contact Name" required>
-    </div>
-    <div class="form-row">
-        <input type="email" name="email" placeholder="Business Email" required>
-    </div>
-    <div class="form-row">
-        <input type="tel" name="phone" placeholder="Phone Number">
-    </div>
-    <button type="submit" class="btn btn-primary full-width">Submit Proposal Request</button>
-</form>
-            </div>
-            <div class="contact-info-box">
-                <h3>Contact Us</h3>
-                <p>📧 management@korevalet.com</p>
-                <p>📍 Dallas, TX</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container footer-content">
-            <p>&copy; 2026 KoreValet. All Rights Reserved. Est. 2026</p>
-        </div>
-    </footer>
-
-    <!-- Interactive Calculation Script -->
-    <script>
-        function calculateROI() {
-            const units = document.getElementById('unitRange').value;
-            const fee = document.getElementById('feeInput').value || 0;
-            
-            document.getElementById('unitCount').innerText = units;
-            
-            const monthly = units * fee;
-            const annual = monthly * 12;
-
-            document.getElementById('monthlyRevenue').innerText = '$' + monthly.toLocaleString();
-            document.getElementById('annualRevenue').innerText = '$' + annual.toLocaleString();
-        }
-    </script>
-</body>
-</html>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#calculator">Calculate Your ROI</a>
+            <a class="button button-outline" href=
