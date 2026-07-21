@@ -44,8 +44,7 @@
       overflow-x: hidden;
     }
 
-    img,
-    video {
+    img {
       display: block;
       max-width: 100%;
     }
@@ -146,7 +145,7 @@
       background: var(--navy-dark);
     }
 
-    /* Navigation */
+    /* Header */
 
     .site-header {
       background: rgba(252, 250, 246, 0.96);
@@ -238,7 +237,7 @@
     .hero {
       background:
         linear-gradient(105deg, rgba(36, 58, 85, 0.98), rgba(48, 74, 106, 0.72)),
-        url("https://images.unsplash.com/photo-1515263487990-61b07816b6d2?auto=format&fit=crop&w=1600&q=90")
+        url("https://images.unsplash.com/photo-1515263487990-61b07816b6d2?auto=format&fit=crop&w=1800&q=90")
         center / cover no-repeat;
       color: var(--white);
       padding: 105px 0;
@@ -273,8 +272,8 @@
       margin-top: 32px;
     }
 
-    .hero-media {
-      border: 8px solid rgba(255, 255, 255, 0.85);
+    .hero-property-image {
+      border: 8px solid rgba(255, 255, 255, 0.88);
       box-shadow: var(--shadow);
       height: 420px;
       overflow: hidden;
@@ -282,7 +281,7 @@
       width: 100%;
     }
 
-    .hero-video {
+    .hero-property-image img {
       display: block;
       height: 100%;
       object-fit: cover;
@@ -386,7 +385,7 @@
       font-size: 0.91rem;
     }
 
-    /* Dog waste station service */
+    /* Dog waste stations */
 
     .pet-service {
       background: var(--navy-dark);
@@ -745,7 +744,7 @@
         padding: 75px 0 85px;
       }
 
-      .hero-media {
+      .hero-property-image {
         max-width: 600px;
       }
 
@@ -819,7 +818,7 @@
         font-size: clamp(2.7rem, 14vw, 4rem);
       }
 
-      .hero-media {
+      .hero-property-image {
         height: 300px;
         transform: none;
       }
@@ -880,35 +879,10 @@
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
-          <path
-            d="M12 7V48"
-            stroke="#304A6A"
-            stroke-width="8"
-            stroke-linecap="round"
-          />
-
-          <path
-            d="M19 27L48 7"
-            stroke="#304A6A"
-            stroke-width="8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-
-          <path
-            d="M19 27L49 48"
-            stroke="#9BAFC1"
-            stroke-width="8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-
-          <path
-            d="M43 44L52 50"
-            stroke="#B49A7D"
-            stroke-width="5"
-            stroke-linecap="round"
-          />
+          <path d="M12 7V48" stroke="#304A6A" stroke-width="8" stroke-linecap="round"/>
+          <path d="M19 27L48 7" stroke="#304A6A" stroke-width="8" stroke-linecap="round"/>
+          <path d="M19 27L49 48" stroke="#9BAFC1" stroke-width="8" stroke-linecap="round"/>
+          <path d="M43 44L52 50" stroke="#B49A7D" stroke-width="5" stroke-linecap="round"/>
         </svg>
 
         <span>
@@ -965,12 +939,12 @@
           </div>
         </div>
 
-  <div class="hero-property-image">
-  <img
-    src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1400&q=90"
-    alt="Modern apartment community with landscaped outdoor spaces"
-  >
-</div>
+        <div class="hero-property-image">
+          <img
+            src="https://images.unsplash.com/photo-1515263487990-61b07816b6d2?auto=format&fit=crop&w=1400&q=90"
+            alt="Modern multi-story apartment community exterior"
+          >
+        </div>
       </div>
     </section>
 
@@ -1009,8 +983,6 @@
           </p>
         </div>
 
-        <!-- Exactly three service cards. -->
-
         <div class="services-grid">
           <article class="service-card">
             <img
@@ -1021,9 +993,7 @@
 
             <div class="service-content">
               <span class="service-number">01 / CONVENIENCE</span>
-
               <h3>Everyday convenience</h3>
-
               <p>
                 Give residents a simple apartment amenity that makes their daily routine easier and more comfortable.
               </p>
@@ -1039,9 +1009,7 @@
 
             <div class="service-content">
               <span class="service-number">02 / DOORSTEP SERVICE</span>
-
               <h3>Collected at the door</h3>
-
               <p>
                 Residents place secured bags outside their apartment doors for scheduled collection by the KoreValet team.
               </p>
@@ -1057,9 +1025,7 @@
 
             <div class="service-content">
               <span class="service-number">03 / PROPERTY VALUE</span>
-
               <h3>A stronger community impression</h3>
-
               <p>
                 Consistent valet trash service supports cleaner common areas, stronger curb appeal, and a more attractive property.
               </p>
@@ -1116,7 +1082,6 @@
         <div class="process-list">
           <div class="process-item">
             <span class="process-number">01</span>
-
             <div>
               <h3>Residents prepare their bags</h3>
               <p>
@@ -1127,7 +1092,6 @@
 
           <div class="process-item">
             <span class="process-number">02</span>
-
             <div>
               <h3>Our team collects at the door</h3>
               <p>
@@ -1138,7 +1102,6 @@
 
           <div class="process-item">
             <span class="process-number">03</span>
-
             <div>
               <h3>Your community wakes up cleaner</h3>
               <p>
@@ -1149,7 +1112,6 @@
 
           <div class="process-item">
             <span class="process-number">04</span>
-
             <div>
               <h3>Pet stations stay supplied</h3>
               <p>
@@ -1260,7 +1222,6 @@
           </div>
         </div>
 
-        <!-- Replace YOUR_FORMSPREE_FORM_ID with your real Formspree ID. -->
         <form
           class="contact-form"
           action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID"
