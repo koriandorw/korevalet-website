@@ -524,6 +524,32 @@
       transform: translateY(0);
     }
 
+    .nav-links a.active,
+    .footer-links a.active {
+      color: var(--brown) !important;
+      font-weight: 800;
+    }
+
+    .nav-links a.active {
+      position: relative;
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 2px;
+      background: var(--brown-light);
+      border-radius: 999px;
+    }
+
+    .footer-links a.active {
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
     @media (max-width: 900px) {
       .hero-grid,
       .split-grid,
@@ -639,8 +665,9 @@
       <nav class="nav-links" id="navLinks">
         <a href="index.html#home">Home</a>
         <a href="index.html#services">Services</a>
-        <a href="index.html#additional-services">Additional Services</a>
+        <a href="additional-services.html" class="active">Additional Services</a>
         <a href="index.html#process">Our Process</a>
+        <a href="faq.html">FAQ</a>
         <a href="index.html#contact">Contact</a>
         <a class="button button-navy nav-cta" href="index.html#contact">Request a Quote</a>
       </nav>
@@ -768,36 +795,36 @@
     </section>
 
     <section class="section">
-  <div class="container">
-    <div class="eyebrow">More detail</div>
-    <h2 class="section-title" style="margin-top: 20px;">Service options built around different community needs.</h2>
-    <p class="section-copy" style="margin-top: 24px;">
-      Each property type has its own workflow, resident expectations, and communication style. This page highlights how KoreValet can support those differences without overcrowding the homepage.
-    </p>
+      <div class="container">
+        <div class="eyebrow">More detail</div>
+        <h2 class="section-title" style="margin-top: 20px;">Service options built around different community needs.</h2>
+        <p class="section-copy" style="margin-top: 24px;">
+          Each property type has its own workflow, resident expectations, and communication style. This page highlights how KoreValet can support those differences without overcrowding the homepage.
+        </p>
 
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>For HOAs</h3>
-        <p>Useful when neighborhoods want a dependable service partner with a simple and organized rollout.</p>
-      </div>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>For HOAs</h3>
+            <p>Useful when neighborhoods want a dependable service partner with a simple and organized rollout.</p>
+          </div>
 
-      <div class="info-card">
-        <h3>For student housing</h3>
-        <p>Good for properties that need a consistent, easy-to-manage setup with clear service expectations.</p>
-      </div>
+          <div class="info-card">
+            <h3>For student housing</h3>
+            <p>Good for properties that need a consistent, easy-to-manage setup with clear service expectations.</p>
+          </div>
 
-      <div class="info-card">
-        <h3>For senior living</h3>
-        <p>Helpful when service needs to feel organized, respectful, and straightforward for residents and staff.</p>
-      </div>
+          <div class="info-card">
+            <h3>For senior living</h3>
+            <p>Helpful when service needs to feel organized, respectful, and straightforward for residents and staff.</p>
+          </div>
 
-      <div class="info-card">
-        <h3>For extended stay</h3>
-        <p>Works well when convenience, consistency, and a clean community experience are the main goals.</p>
+          <div class="info-card">
+            <h3>For extended stay</h3>
+            <p>Works well when convenience, consistency, and a clean community experience are the main goals.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <section class="cta-band">
       <div class="container cta-band-inner">
@@ -835,6 +862,7 @@
 
       <div class="footer-links">
         <a href="index.html#services">Services</a>
+        <a href="additional-services.html" class="active">Additional Services</a>
         <a href="index.html#roi">Property ROI</a>
         <a href="faq.html">FAQ</a>
         <a href="index.html#contact">Contact</a>
@@ -879,6 +907,16 @@
         });
       });
     }
+
+    const currentPage = window.location.pathname.split("/").pop() || "additional-services.html";
+
+    document.querySelectorAll(".nav-links a, .footer-links a").forEach((link) => {
+      const href = link.getAttribute("href") || "";
+
+      if (currentPage === "additional-services.html" && href === "additional-services.html") {
+        link.classList.add("active");
+      }
+    });
   </script>
 </body>
 </html>
