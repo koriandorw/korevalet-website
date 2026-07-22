@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="KoreValet provides tailored waste and property-support services for apartment communities, HOAs, townhome associations, student housing, and senior living or extended stay properties throughout DFW.">
+  <meta name="description" content="KoreValet additional services for HOAs, townhome associations, student housing, senior living, and extended stay communities throughout DFW.">
   <title>KoreValet | Additional Services</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,21 +44,14 @@
       overflow-x: hidden;
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
     a {
       color: inherit;
       text-decoration: none;
     }
 
-    button,
-    input,
-    select,
-    textarea {
-      font: inherit;
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     .container {
@@ -87,7 +80,7 @@
     .section-title {
       color: var(--navy-dark);
       font-family: "Manrope", Arial, sans-serif;
-      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-size: clamp(2.25rem, 5vw, 4rem);
       letter-spacing: -0.06em;
       line-height: 1;
       max-width: 760px;
@@ -96,7 +89,7 @@
     .section-copy {
       color: var(--muted);
       font-size: 1rem;
-      max-width: 620px;
+      max-width: 640px;
     }
 
     .button {
@@ -126,6 +119,16 @@
       background: #684d3d;
     }
 
+    .button-light {
+      border-color: rgba(255, 255, 255, 0.55);
+      color: var(--white);
+    }
+
+    .button-light:hover {
+      background: var(--white);
+      color: var(--navy-dark);
+    }
+
     .button-navy {
       background: var(--navy);
       color: var(--white);
@@ -133,17 +136,6 @@
 
     .button-navy:hover {
       background: var(--navy-dark);
-    }
-
-    .button-outline {
-      background: transparent;
-      border-color: var(--navy);
-      color: var(--navy);
-    }
-
-    .button-outline:hover {
-      background: var(--navy);
-      color: var(--white);
     }
 
     .site-header {
@@ -233,27 +225,27 @@
 
     .hero {
       background:
-        linear-gradient(105deg, rgba(36, 58, 85, 0.96), rgba(48, 74, 106, 0.78)),
-        url("https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1800&q=90")
+        linear-gradient(105deg, rgba(36, 58, 85, 0.98), rgba(48, 74, 106, 0.72)),
+        url("https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1800&q=90")
         center / cover no-repeat;
       color: var(--white);
-      padding: 105px 0 90px;
+      padding: 105px 0;
     }
 
     .hero-grid {
       align-items: center;
       display: grid;
-      gap: 60px;
-      grid-template-columns: 1fr 1fr;
+      gap: 75px;
+      grid-template-columns: 1fr 0.95fr;
     }
 
     .hero h1 {
       font-family: "Manrope", Arial, sans-serif;
-      font-size: clamp(3rem, 6vw, 5rem);
+      font-size: clamp(3rem, 6vw, 5.4rem);
       letter-spacing: -0.07em;
       line-height: 0.96;
       margin: 22px 0;
-      max-width: 700px;
+      max-width: 680px;
     }
 
     .hero-copy {
@@ -269,179 +261,189 @@
       margin-top: 32px;
     }
 
-    .hero-card {
-      background: rgba(255, 255, 255, 0.1);
+    .hero-panel {
+      background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.18);
       box-shadow: var(--shadow);
-      padding: 28px;
+      padding: 34px;
+      backdrop-filter: blur(10px);
     }
 
-    .hero-card h2 {
-      color: var(--white);
+    .hero-panel h2 {
       font-family: "Manrope", Arial, sans-serif;
-      font-size: 1.35rem;
-      margin-bottom: 10px;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
     }
 
-    .hero-card p {
-      color: #e3e9ee;
-      font-size: 0.97rem;
+    .hero-panel p {
+      color: #e4ebf0;
+      margin-bottom: 16px;
     }
 
-    .hero-card-grid {
+    .hero-list {
       display: grid;
-      gap: 14px;
-      margin-top: 18px;
+      gap: 10px;
+      list-style: none;
     }
 
-    .hero-card-grid div {
+    .hero-list li {
       border-left: 2px solid var(--brown-light);
-      color: #f2f5f7;
       padding-left: 12px;
     }
 
-    .segments {
-      padding: 110px 0 50px;
+    .section {
+      padding: 105px 0;
     }
 
-    .segment-grid {
+    .section-head {
+      margin-bottom: 34px;
+    }
+
+    .grid-3 {
       display: grid;
-      gap: 22px;
-      grid-template-columns: repeat(2, 1fr);
-      margin-top: 42px;
+      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
     }
 
-    .segment-card {
+    .card {
       background: var(--white);
       border: 1px solid var(--line);
       box-shadow: 0 8px 20px rgba(48, 74, 106, 0.06);
       overflow: hidden;
+      transition: 200ms ease;
     }
 
-    .segment-card img {
+    .card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-6px);
+    }
+
+    .card img {
       height: 220px;
       object-fit: cover;
       width: 100%;
     }
 
-    .segment-content {
+    .card-content {
       padding: 26px;
     }
 
-    .segment-label {
-      color: var(--brown);
-      font-family: "Manrope", Arial, sans-serif;
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-    }
-
-    .segment-card h3 {
+    .card-content h3 {
       color: var(--navy-dark);
       font-family: "Manrope", Arial, sans-serif;
-      font-size: 1.5rem;
-      margin: 12px 0 10px;
+      font-size: 1.35rem;
+      margin-bottom: 10px;
     }
 
-    .segment-card p {
+    .card-content p {
       color: var(--muted);
-      font-size: 0.94rem;
+      font-size: 0.91rem;
       margin-bottom: 14px;
     }
 
-    .segment-list {
-      color: var(--ink);
-      display: grid;
-      gap: 8px;
+    .card-content ul {
       list-style: none;
     }
 
-    .segment-list li {
-      border-left: 2px solid var(--steel);
+    .card-content li {
+      border-left: 2px solid var(--brown-light);
+      color: var(--ink);
+      margin-bottom: 10px;
       padding-left: 10px;
     }
 
-    .details {
-      padding: 60px 0 110px;
+    .split {
+      background: #e7edf1;
+      padding: 105px 0;
     }
 
-    .detail-stack {
+    .split-grid {
+      display: grid;
+      gap: 64px;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: start;
+    }
+
+    .split-list {
+      border-top: 1px solid #bfcbd4;
+    }
+
+    .split-item {
+      border-bottom: 1px solid #bfcbd4;
       display: grid;
       gap: 22px;
+      grid-template-columns: 48px 1fr;
+      padding: 25px 0;
     }
 
-    .detail-block {
+    .split-number {
+      color: var(--brown);
+      font-family: "Manrope", Arial, sans-serif;
+      font-weight: 800;
+    }
+
+    .split-item h3 {
+      color: var(--navy-dark);
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .split-item p {
+      color: var(--muted);
+      font-size: 0.91rem;
+    }
+
+    .cta-band {
+      background: var(--navy-dark);
+      color: var(--white);
+      margin-top: 28px;
+    }
+
+    .cta-band-inner {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr auto;
+      padding: 38px;
+      align-items: center;
+    }
+
+    .cta-band h3 {
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      letter-spacing: -0.05em;
+      line-height: 1.02;
+      margin-bottom: 12px;
+    }
+
+    .cta-band p {
+      color: #d9e2e9;
+      max-width: 680px;
+    }
+
+    .info-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 34px;
+    }
+
+    .info-card {
       background: var(--white);
       border: 1px solid var(--line);
-      box-shadow: 0 8px 20px rgba(48, 74, 106, 0.05);
+      box-shadow: 0 8px 20px rgba(48, 74, 106, 0.06);
       padding: 28px;
     }
 
-    .detail-block h3 {
+    .info-card h3 {
       color: var(--navy-dark);
       font-family: "Manrope", Arial, sans-serif;
-      font-size: 1.4rem;
+      font-size: 1.25rem;
       margin-bottom: 10px;
     }
 
-    .detail-block p {
+    .info-card p {
       color: var(--muted);
-      margin-bottom: 16px;
-      max-width: 760px;
-    }
-
-    .detail-grid {
-      display: grid;
-      gap: 14px;
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .detail-item {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      padding: 16px;
-    }
-
-    .detail-item strong {
-      color: var(--navy-dark);
-      display: block;
-      font-family: "Manrope", Arial, sans-serif;
-      margin-bottom: 6px;
-    }
-
-    .detail-item span {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .cta-section {
-      background: var(--cream);
-      padding: 90px 0;
-    }
-
-    .cta-box {
-      align-items: center;
-      background: var(--white);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      display: grid;
-      gap: 26px;
-      grid-template-columns: 1fr auto;
-      padding: 34px;
-    }
-
-    .cta-box h2 {
-      color: var(--navy-dark);
-      font-family: "Manrope", Arial, sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      letter-spacing: -0.05em;
-      line-height: 1.05;
-      margin-bottom: 10px;
-    }
-
-    .cta-box p {
-      color: var(--muted);
-      max-width: 720px;
     }
 
     .footer {
@@ -453,7 +455,9 @@
     .footer-inner {
       align-items: center;
       display: flex;
+      gap: 18px;
       justify-content: space-between;
+      flex-wrap: wrap;
     }
 
     .footer .brand-name {
@@ -469,26 +473,76 @@
       font-size: 0.79rem;
     }
 
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #d9e2e9;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .back-to-top {
+      align-items: center;
+      background: var(--navy);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 50%;
+      bottom: 24px;
+      box-shadow: var(--shadow);
+      color: var(--white);
+      cursor: pointer;
+      display: flex;
+      font-size: 1.35rem;
+      height: 48px;
+      justify-content: center;
+      opacity: 0;
+      padding: 0;
+      pointer-events: none;
+      position: fixed;
+      right: 24px;
+      transform: translateY(12px);
+      transition: opacity 180ms ease, transform 180ms ease, background 180ms ease;
+      width: 48px;
+      z-index: 30;
+    }
+
+    .back-to-top:hover {
+      background: var(--brown);
+      transform: translateY(0);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
     @media (max-width: 900px) {
       .hero-grid,
-      .cta-box,
-      .detail-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .segment-grid {
+      .split-grid,
+      .grid-3,
+      .info-grid {
         grid-template-columns: 1fr;
       }
 
       .hero {
+        padding: 75px 0 85px;
+      }
+
+      .section,
+      .split {
         padding: 80px 0;
       }
 
-      .segments,
-      .details,
-      .cta-section {
-        padding-top: 80px;
-        padding-bottom: 80px;
+      .cta-band-inner {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -541,7 +595,7 @@
       }
 
       .hero h1 {
-        font-size: clamp(2.6rem, 14vw, 4rem);
+        font-size: clamp(2.7rem, 14vw, 4rem);
       }
 
       .footer-inner {
@@ -549,21 +603,21 @@
         flex-direction: column;
         gap: 18px;
       }
+
+      .back-to-top {
+        bottom: 18px;
+        height: 44px;
+        right: 16px;
+        width: 44px;
+      }
     }
   </style>
 </head>
-
 <body>
   <header class="site-header">
     <div class="container navigation">
-      <a class="brand" href="index.html" aria-label="KoreValet home">
-        <svg
-          class="logo-mark"
-          viewBox="0 0 100 55"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
+      <a class="brand" href="index.html#home" aria-label="KoreValet home">
+        <svg class="logo-mark" viewBox="0 0 100 55" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M12 7V48" stroke="#304A6A" stroke-width="8" stroke-linecap="round"/>
           <path d="M19 27L48 7" stroke="#304A6A" stroke-width="8" stroke-linecap="round"/>
           <path d="M19 27L49 48" stroke="#9BAFC1" stroke-width="8" stroke-linecap="round"/>
@@ -576,302 +630,197 @@
         </span>
       </a>
 
-      <button
-        class="menu-button"
-        id="menuButton"
-        type="button"
-        aria-label="Open navigation"
-        aria-expanded="false"
-      >
+      <button class="menu-button" id="menuButton" type="button" aria-label="Open navigation" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
       <nav class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="index.html#services">Core Services</a>
-        <a href="additional-services.html">Additional Services</a>
-        <a href="index.html#roi">Property ROI</a>
+        <a href="index.html#home">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#additional-services">Additional Services</a>
+        <a href="index.html#process">Our Process</a>
         <a href="index.html#contact">Contact</a>
-        <a class="button button-navy nav-cta" href="index.html#contact">
-          Request a Quote
-        </a>
+        <a class="button button-navy nav-cta" href="index.html#contact">Request a Quote</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="top">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Expanded Property Support</div>
-
-          <h1>Tailored trash services for different community types.</h1>
-
+          <div class="eyebrow">Additional services</div>
+          <h1>Support for more than apartment communities.</h1>
           <p class="hero-copy">
-            KoreValet can support more than traditional apartment communities. We can tailor service schedules, collection styles, and property-support routines for HOAs, townhome associations, student housing, and senior living or extended stay environments.
+            KoreValet also works with HOAs, townhome associations, student housing, senior living, and extended stay properties that need a dependable, resident-friendly service partner.
           </p>
 
           <div class="hero-actions">
-            <a class="button button-primary" href="index.html#contact">
-              Request a Custom Proposal
-            </a>
-
-            <a class="button button-outline" href="#segments">
-              Explore Service Types
-            </a>
+            <a class="button button-primary" href="index.html#contact">Request a Quote</a>
+            <a class="button button-light" href="index.html#roi">Estimate ROI</a>
           </div>
         </div>
 
-        <div class="hero-card">
-          <h2>Built Around Property Needs</h2>
-          <p>
-            Each property type operates differently. We help simplify waste handling while improving visual presentation, routine consistency, and resident convenience.
+        <div class="hero-panel">
+          <h2>What this page covers</h2>
+          <p>Separate service support for property types that need different communication, collection, and scheduling needs.</p>
+          <ul class="hero-list">
+            <li>HOAs and townhome associations</li>
+            <li>Student housing communities</li>
+            <li>Senior living and extended stay</li>
+            <li>Flexible property planning</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Community types</div>
+          <h2 class="section-title">Service options tailored to the property type.</h2>
+          <p class="section-copy">
+            Different communities have different expectations. KoreValet keeps the service straightforward while adapting to the property style and operating needs.
           </p>
+        </div>
 
-          <div class="hero-card-grid">
-            <div>Flexible collection schedules</div>
-            <div>Property-specific service plans</div>
-            <div>Common-area presentation support</div>
-            <div>Resident-focused convenience services</div>
+        <div class="grid-3">
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=85" alt="Townhome and residential community setting" loading="lazy">
+            <div class="card-content">
+              <h3>HOAs & Townhome Associations</h3>
+              <p>Cleaner shared spaces and predictable support for neighborhoods that want a polished, well-managed feel.</p>
+              <ul>
+                <li>Shared-area coordination</li>
+                <li>Community-friendly scheduling</li>
+                <li>Clear communication</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=85" alt="Student housing community exterior" loading="lazy">
+            <div class="card-content">
+              <h3>Student Housing</h3>
+              <p>Reliable collection for communities where high resident turnover and busy schedules make consistency important.</p>
+              <ul>
+                <li>Reliable service windows</li>
+                <li>Property staff support</li>
+                <li>Easy rollout planning</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=85" alt="Senior living community exterior" loading="lazy">
+            <div class="card-content">
+              <h3>Senior Living & Extended Stay</h3>
+              <p>Respectful, dependable service designed for communities where convenience and care matter.</p>
+              <ul>
+                <li>Resident-first service</li>
+                <li>Professional presentation</li>
+                <li>Flexible planning</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="split">
+      <div class="container split-grid">
+        <div>
+          <div class="eyebrow">How we work</div>
+          <h2 class="section-title" style="margin-top: 20px;">A simple process for different community types.</h2>
+          <p class="section-copy" style="margin-top: 24px;">
+            We keep the setup manageable and make sure the service aligns with the way your property operates.
+          </p>
+        </div>
+
+        <div class="split-list">
+          <div class="split-item">
+            <span class="split-number">01</span>
+            <div>
+              <h3>Tell us the property type</h3>
+              <p>Share whether you need service for an HOA, townhome association, student housing, senior living, or extended stay property.</p>
+            </div>
+          </div>
+
+          <div class="split-item">
+            <span class="split-number">02</span>
+            <div>
+              <h3>We tailor the schedule</h3>
+              <p>We look at layout, resident flow, and service expectations to match the right schedule and support level.</p>
+            </div>
+          </div>
+
+          <div class="split-item">
+            <span class="split-number">03</span>
+            <div>
+              <h3>You get a clean rollout plan</h3>
+              <p>Once approved, we help organize the launch and keep the service simple for the property team.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="segments" id="segments">
+    <section class="section">
       <div class="container">
-        <div class="eyebrow">Service Types</div>
-        <h2 class="section-title">Different communities need different service strategies.</h2>
-        <p class="section-copy" style="margin-top: 20px;">
-          KoreValet can adapt service delivery to the operational needs, resident expectations, and visual standards of multiple property categories across DFW.
+        <div class="eyebrow">More detail</div>
+        <h2 class="section-title" style="margin-top: 20px;">Why separate this page from the homepage.</h2>
+        <p class="section-copy" style="margin-top: 24px;">
+          The homepage stays focused on apartment communities, while this page gives space for the other property categories without making the main page feel crowded.
         </p>
 
-        <div class="segment-grid">
-          <article class="segment-card">
-            <img
-              src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=90"
-              alt="Modern apartment community building"
-              loading="lazy"
-            >
-
-            <div class="segment-content">
-              <span class="segment-label">01 / APARTMENT COMMUNITIES</span>
-              <h3>High-frequency resident convenience</h3>
-              <p>
-                Designed for properties that want consistent doorstep collection, cleaner breezeways, and a stronger resident amenity offering.
-              </p>
-
-              <ul class="segment-list">
-                <li>Doorstep valet trash collection</li>
-                <li>Recycling support where applicable</li>
-                <li>Breezeway presentation support</li>
-                <li>Dog waste station servicing</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="segment-card">
-            <img
-              src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=90"
-              alt="Townhome style residential community"
-              loading="lazy"
-            >
-
-            <div class="segment-content">
-              <span class="segment-label">02 / HOAS & TOWNHOME ASSOCIATIONS</span>
-              <h3>Cleaner shared spaces and simpler routines</h3>
-              <p>
-                Ideal for communities that need help keeping common areas neat while reducing the burden on residents and property teams.
-              </p>
-
-              <ul class="segment-list">
-                <li>Shared-area waste support</li>
-                <li>Trash enclosure monitoring</li>
-                <li>Dog station bag refills and trash removal</li>
-                <li>Flexible collection timing by community layout</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="segment-card">
-            <img
-              src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=90"
-              alt="Student housing interior and community lifestyle"
-              loading="lazy"
-            >
-
-            <div class="segment-content">
-              <span class="segment-label">03 / STUDENT HOUSING</span>
-              <h3>Structured service for high-volume living</h3>
-              <p>
-                Student housing often requires stronger scheduling discipline, fast turn support, and reliable management during peak occupancy.
-              </p>
-
-              <ul class="segment-list">
-                <li>Consistent recurring collection</li>
-                <li>Move-in and move-out overflow support</li>
-                <li>High-traffic corridor and breezeway support</li>
-                <li>Schedule options that fit student routines</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="segment-card">
-            <img
-              src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=90"
-              alt="Comfortable extended stay or senior living interior"
-              loading="lazy"
-            >
-
-            <div class="segment-content">
-              <span class="segment-label">04 / SENIOR LIVING & EXTENDED STAY</span>
-              <h3>Reliable service with a gentler operational rhythm</h3>
-              <p>
-                These communities benefit from clean presentation, dependable scheduling, and a service approach that respects resident comfort.
-              </p>
-
-              <ul class="segment-list">
-                <li>Routine waste pickup schedules</li>
-                <li>Hallway and shared-space appearance support</li>
-                <li>Flexible timing based on occupancy patterns</li>
-                <li>Property-friendly service coordination</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="details">
-      <div class="container">
-        <div class="eyebrow">Service Planning</div>
-        <h2 class="section-title">We can shape the service around your property’s real needs.</h2>
-        <p class="section-copy" style="margin-top: 20px; margin-bottom: 34px;">
-          Rather than using a one-size-fits-all model, KoreValet can help tailor routes, service windows, common-area support, and resident-facing convenience based on how your community actually operates.
-        </p>
-
-        <div class="detail-stack">
-          <div class="detail-block">
-            <h3>Apartment Communities</h3>
-            <p>
-              Best for properties that want to strengthen resident experience while improving breezeway presentation and reducing visible waste.
-            </p>
-
-            <div class="detail-grid">
-              <div class="detail-item">
-                <strong>Resident Convenience</strong>
-                <span>Doorstep collection designed to simplify daily waste routines.</span>
-              </div>
-              <div class="detail-item">
-                <strong>Appearance Support</strong>
-                <span>Cleaner common areas and stronger curb appeal.</span>
-              </div>
-              <div class="detail-item">
-                <strong>Amenity Positioning</strong>
-                <span>A practical service residents notice and appreciate.</span>
-              </div>
-            </div>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>For HOAs</h3>
+            <p>Useful when neighborhoods want a dependable service partner without a heavy operational lift.</p>
           </div>
 
-          <div class="detail-block">
-            <h3>HOAs & Townhome Associations</h3>
-            <p>
-              Strong fit for communities that want organized shared-space support without overcomplicating resident schedules.
-            </p>
-
-            <div class="detail-grid">
-              <div class="detail-item">
-                <strong>Shared Spaces</strong>
-                <span>Support for cleaner common areas and waste-related touchpoints.</span>
-              </div>
-              <div class="detail-item">
-                <strong>Pet Area Care</strong>
-                <span>Dog station trash removal, bag refills, and supply replacement.</span>
-              </div>
-              <div class="detail-item">
-                <strong>Flexible Layouts</strong>
-                <span>Service adapted to townhome-style or neighborhood-style communities.</span>
-              </div>
-            </div>
+          <div class="info-card">
+            <h3>For student housing</h3>
+            <p>Good for properties that need a consistent, easy-to-manage setup with clear service expectations.</p>
           </div>
 
-          <div class="detail-block">
-            <h3>Student Housing</h3>
-            <p>
-              Student housing benefits from consistent routine, strong management during turnover periods, and support for heavier usage patterns.
-            </p>
-
-            <div class="detail-grid">
-              <div class="detail-item">
-                <strong>High Occupancy Readiness</strong>
-                <span>Designed for communities with faster resident turnover and heavy use.</span>
-              </div>
-              <div class="detail-item">
-                <strong>Turn Support</strong>
-                <span>Helpful for move-in, move-out, and high-volume waste periods.</span>
-              </div>
-              <div class="detail-item">
-                <strong>Routine Consistency</strong>
-                <span>Service windows that keep operations predictable.</span>
-              </div>
-            </div>
+          <div class="info-card">
+            <h3>For senior living</h3>
+            <p>Helpful when service needs to feel organized, respectful, and straightforward for residents and staff.</p>
           </div>
 
-          <div class="detail-block">
-            <h3>Senior Living & Extended Stay</h3>
-            <p>
-              These environments often require cleaner presentation, careful scheduling, and an approach that fits longer-stay or comfort-sensitive residents.
-            </p>
-
-            <div class="detail-grid">
-              <div class="detail-item">
-                <strong>Reliable Scheduling</strong>
-                <span>Predictable pickup structure aligned to resident routines.</span>
-              </div>
-              <div class="detail-item">
-                <strong>Presentation Standards</strong>
-                <span>Clean hallways and shared areas support resident confidence.</span>
-              </div>
-              <div class="detail-item">
-                <strong>Flexible Coordination</strong>
-                <span>Service planning that respects occupancy type and property operations.</span>
-              </div>
-            </div>
+          <div class="info-card">
+            <h3>For extended stay</h3>
+            <p>Works well when convenience, consistency, and a clean community experience are the main goals.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-box">
-          <div>
-            <h2>Need a service plan built for your property type?</h2>
-            <p>
-              Tell us whether you operate an apartment community, HOA, townhome association, student housing property, senior living community, or extended stay environment. We can help shape a service routine that simplifies operations and supports property appeal.
-            </p>
-          </div>
-
-          <a class="button button-primary" href="index.html#contact">
-            Request a Proposal
-          </a>
+    <section class="cta-band">
+      <div class="container cta-band-inner">
+        <div>
+          <h3>Ready to talk through your property?</h3>
+          <p>
+            Send your details and we’ll follow up with a proposal or consultation based on the type of community you manage.
+          </p>
         </div>
+
+        <a class="button button-light" href="index.html#contact">Go to Contact Form</a>
       </div>
     </section>
   </main>
 
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top">
+    <span aria-hidden="true">&#8593;</span>
+  </button>
+
   <footer class="footer">
     <div class="container footer-inner">
-      <a class="brand" href="index.html" aria-label="KoreValet home">
-        <svg
-          class="logo-mark"
-          viewBox="0 0 100 55"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
+      <a class="brand" href="index.html#home" aria-label="KoreValet home">
+        <svg class="logo-mark" viewBox="0 0 100 55" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M12 7V48" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
           <path d="M19 27L48 7" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
           <path d="M19 27L49 48" stroke="#9BAFC1" stroke-width="8" stroke-linecap="round"/>
@@ -884,6 +833,13 @@
         </span>
       </a>
 
+      <div class="footer-links">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#roi">Property ROI</a>
+        <a href="faq.html">FAQ</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+
       <p>&copy; 2026 KoreValet. All rights reserved.</p>
     </div>
   </footer>
@@ -891,21 +847,38 @@
   <script>
     const menuButton = document.getElementById("menuButton");
     const navLinks = document.getElementById("navLinks");
+    const backToTop = document.getElementById("backToTop");
 
-    if (menuButton) {
+    if (menuButton && navLinks) {
       menuButton.addEventListener("click", () => {
         const isOpen = navLinks.classList.toggle("open");
         menuButton.setAttribute("aria-expanded", String(isOpen));
       });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+          menuButton.setAttribute("aria-expanded", "false");
+        });
+      });
     }
 
-    navLinks.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        menuButton.setAttribute("aria-expanded", "false");
+    if (backToTop) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 450) {
+          backToTop.classList.add("visible");
+        } else {
+          backToTop.classList.remove("visible");
+        }
       });
-    });
+
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+    }
   </script>
 </body>
 </html>
-```
