@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Frequently asked questions about KoreValet services for apartment communities and other residential properties throughout DFW.">
+  <meta name="description" content="Frequently asked questions about KoreValet valet trash, recycling, dog waste station service, and community support in DFW.">
   <title>KoreValet | FAQ</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,6 +41,7 @@
       color: var(--ink);
       font-family: "DM Sans", Arial, sans-serif;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     a {
@@ -74,7 +75,7 @@
     .section-title {
       color: var(--navy-dark);
       font-family: "Manrope", Arial, sans-serif;
-      font-size: clamp(2.3rem, 5vw, 4rem);
+      font-size: clamp(2.25rem, 5vw, 4rem);
       letter-spacing: -0.06em;
       line-height: 1;
       max-width: 760px;
@@ -83,7 +84,7 @@
     .section-copy {
       color: var(--muted);
       font-size: 1rem;
-      max-width: 680px;
+      max-width: 640px;
     }
 
     .button {
@@ -111,6 +112,16 @@
 
     .button-primary:hover {
       background: #684d3d;
+    }
+
+    .button-light {
+      border-color: rgba(255, 255, 255, 0.55);
+      color: var(--white);
+    }
+
+    .button-light:hover {
+      background: var(--white);
+      color: var(--navy-dark);
     }
 
     .button-navy {
@@ -209,85 +220,144 @@
 
     .hero {
       background:
-        linear-gradient(105deg, rgba(36, 58, 85, 0.96), rgba(48, 74, 106, 0.76)),
+        linear-gradient(105deg, rgba(36, 58, 85, 0.98), rgba(48, 74, 106, 0.72)),
         url("https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1800&q=90")
         center / cover no-repeat;
       color: var(--white);
-      padding: 95px 0;
+      padding: 105px 0;
+    }
+
+    .hero-grid {
+      align-items: center;
+      display: grid;
+      gap: 75px;
+      grid-template-columns: 1fr 0.95fr;
     }
 
     .hero h1 {
       font-family: "Manrope", Arial, sans-serif;
-      font-size: clamp(3rem, 6vw, 5rem);
+      font-size: clamp(3rem, 6vw, 5.4rem);
       letter-spacing: -0.07em;
       line-height: 0.96;
       margin: 22px 0;
-      max-width: 760px;
+      max-width: 680px;
     }
 
     .hero-copy {
       color: #e4ebf0;
       font-size: 1.08rem;
-      max-width: 680px;
+      max-width: 560px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .hero-panel {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: var(--shadow);
+      padding: 34px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-panel h2 {
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    .hero-panel p {
+      color: #e4ebf0;
+      margin-bottom: 16px;
     }
 
     .faq-section {
-      background: var(--paper);
-      padding: 95px 0;
+      padding: 105px 0;
     }
 
-    .faq-list {
+    .faq-grid {
       display: grid;
-      gap: 16px;
-      margin-top: 34px;
+      gap: 18px;
+      margin-top: 36px;
     }
 
     .faq-item {
       background: var(--white);
       border: 1px solid var(--line);
-      box-shadow: 0 8px 20px rgba(48, 74, 106, 0.05);
-      padding: 22px;
+      box-shadow: 0 8px 20px rgba(48, 74, 106, 0.06);
+      padding: 26px;
     }
 
     .faq-item h3 {
       color: var(--navy-dark);
       font-family: "Manrope", Arial, sans-serif;
       font-size: 1.2rem;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .faq-item p {
       color: var(--muted);
-      font-size: 0.95rem;
     }
 
-    .cta-section {
+    .faq-band {
       background: var(--cream);
-      padding: 90px 0;
+      padding: 105px 0;
     }
 
-    .cta-box {
-      background: var(--white);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
+    .faq-band-grid {
       display: grid;
       gap: 20px;
-      grid-template-columns: 1fr auto;
-      padding: 34px;
-      align-items: center;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 34px;
     }
 
-    .cta-box h2 {
+    .faq-band-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 20px rgba(48, 74, 106, 0.06);
+      padding: 28px;
+    }
+
+    .faq-band-card h3 {
       color: var(--navy-dark);
       font-family: "Manrope", Arial, sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      letter-spacing: -0.05em;
-      line-height: 1.05;
+      font-size: 1.25rem;
       margin-bottom: 10px;
     }
 
-    .cta-box p {
+    .faq-band-card p {
       color: var(--muted);
+    }
+
+    .cta-band {
+      background: var(--navy-dark);
+      color: var(--white);
+      margin-top: 28px;
+    }
+
+    .cta-band-inner {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr auto;
+      padding: 38px;
+      align-items: center;
+    }
+
+    .cta-band h3 {
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      letter-spacing: -0.05em;
+      line-height: 1.02;
+      margin-bottom: 12px;
+    }
+
+    .cta-band p {
+      color: #d9e2e9;
+      max-width: 680px;
     }
 
     .footer {
@@ -299,7 +369,9 @@
     .footer-inner {
       align-items: center;
       display: flex;
+      gap: 18px;
       justify-content: space-between;
+      flex-wrap: wrap;
     }
 
     .footer .brand-name {
@@ -313,6 +385,22 @@
     .footer p {
       color: #c1ced8;
       font-size: 0.79rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #d9e2e9;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
     }
 
     .back-to-top {
@@ -351,7 +439,21 @@
     }
 
     @media (max-width: 900px) {
-      .cta-box {
+      .hero-grid,
+      .faq-band-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 75px 0 85px;
+      }
+
+      .faq-section,
+      .faq-band {
+        padding: 80px 0;
+      }
+
+      .cta-band-inner {
         grid-template-columns: 1fr;
       }
     }
@@ -405,7 +507,7 @@
       }
 
       .hero h1 {
-        font-size: clamp(2.6rem, 14vw, 4rem);
+        font-size: clamp(2.7rem, 14vw, 4rem);
       }
 
       .footer-inner {
@@ -423,11 +525,10 @@
     }
   </style>
 </head>
-
 <body>
   <header class="site-header">
     <div class="container navigation">
-      <a class="brand" href="index.html" aria-label="KoreValet home">
+      <a class="brand" href="index.html#home" aria-label="KoreValet home">
         <svg class="logo-mark" viewBox="0 0 100 55" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M12 7V48" stroke="#304A6A" stroke-width="8" stroke-linecap="round"/>
           <path d="M19 27L48 7" stroke="#304A6A" stroke-width="8" stroke-linecap="round"/>
@@ -448,128 +549,135 @@
       </button>
 
       <nav class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="index.html#services">Core Services</a>
-        <a href="additional-services.html">Additional Services</a>
-        <a href="faq.html">FAQ</a>
+        <a href="index.html#home">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#additional-services">Additional Services</a>
+        <a href="index.html#process">Our Process</a>
         <a href="index.html#contact">Contact</a>
-        <a class="button button-navy nav-cta" href="index.html#contact">
-          Request a Quote
-        </a>
+        <a class="button button-navy nav-cta" href="index.html#contact">Request a Quote</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container">
-        <div class="eyebrow">Answers for Property Teams</div>
-        <h1>Frequently asked questions about KoreValet services.</h1>
-        <p class="hero-copy">
-          Find quick answers about property types served, scheduling, dog waste stations, and how KoreValet can help simplify operations while supporting property appearance.
-        </p>
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Frequently asked questions</div>
+          <h1>Quick answers for property teams and managers.</h1>
+          <p class="hero-copy">
+            If you want to understand how KoreValet works, what services we offer, or how to get started, this page covers the most common questions.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="index.html#contact">Ask a Question</a>
+            <a class="button button-light" href="index.html#roi">Estimate ROI</a>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <h2>What you’ll find here</h2>
+          <p>Simple answers about service, setup, coverage, and the next steps for your community.</p>
+          <p>Still need help? Use the contact form on the homepage and we’ll follow up directly.</p>
+        </div>
       </div>
     </section>
 
     <section class="faq-section">
       <div class="container">
-        <div class="eyebrow">FAQ</div>
+        <div class="eyebrow">Common questions</div>
+        <h2 class="section-title" style="margin-top: 20px;">The basics, answered clearly.</h2>
 
-        <h2 class="section-title">
-          Common questions from property teams.
-        </h2>
-
-        <div class="faq-list">
-          <div class="faq-item">
-            <h3>How often can service be scheduled?</h3>
+        <div class="faq-grid">
+          <article class="faq-item">
+            <h3>What does KoreValet provide?</h3>
             <p>
-              Service frequency can be tailored based on property type, resident volume, and operational needs.
+              KoreValet provides valet trash for apartment communities, plus recycling support and dog waste station service as needed.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3>What property types do you serve?</h3>
+            <p>
+              We focus on apartment communities and also support HOAs, townhome associations, student housing, senior living, and extended stay properties.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3>How does the service work?</h3>
+            <p>
+              Residents place secured bags in the designated area before the scheduled window, and our team completes the collection based on your approved service plan.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Do you offer dog waste station service?</h3>
+            <p>
+              Yes. We can help with trash removal, bag refills, and dispenser replacements for pet areas and dog waste stations.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Can you help us estimate ROI?</h3>
+            <p>
+              Yes. The homepage includes an ROI calculator that gives a quick estimate of revenue, cost, profit, and return based on unit count and pricing.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3>How do we request service?</h3>
+            <p>
+              Use the contact form on the homepage or email management@korevalet.com with your property details and we’ll follow up.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-band">
+      <div class="container">
+        <div class="eyebrow">More information</div>
+        <h2 class="section-title" style="margin-top: 20px;">A few helpful details for getting started.</h2>
+
+        <div class="faq-band-grid">
+          <div class="faq-band-card">
+            <h3>What to send us</h3>
+            <p>
+              Property name, location, unit count, current provider setup, and whether you need valet trash, dog waste station support, or both.
             </p>
           </div>
 
-          <div class="faq-item">
-            <h3>Do you only serve apartment communities?</h3>
+          <div class="faq-band-card">
+            <h3>Why separate pages help</h3>
             <p>
-              No. KoreValet can also support HOAs, townhome associations, student housing, senior living, and extended stay properties.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <h3>Can you help with dog waste stations?</h3>
-            <p>
-              Yes. KoreValet can provide dog waste station trash removal, bag refills, and replacement supplies as needed.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <h3>Can services be customized by property?</h3>
-            <p>
-              Yes. We can help build a property-specific service plan based on layout, resident needs, shared spaces, and collection goals.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <h3>Do you offer quotes and consultations?</h3>
-            <p>
-              Yes. Use the inquiry form to request a custom quote or book a consultation for your property.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <h3>What information should I include in my inquiry?</h3>
-            <p>
-              It helps to include location, unit count, approximate number of buildings, current provider or setup, and preferred start timeline.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <h3>Can KoreValet support student housing or senior living?</h3>
-            <p>
-              Yes. We can tailor service plans for student housing, senior living, extended stay, HOAs, townhome communities, and traditional apartment properties.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <h3>Can you provide both valet trash and pet station support?</h3>
-            <p>
-              Yes. Many communities combine valet trash service with dog waste station trash removal, bag refills, and supply replacement.
+              The homepage stays focused on the main services, while this FAQ page and the additional services page give space for extra detail.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-box">
-          <div>
-            <h2>Still have questions about your property?</h2>
-            <p>
-              Tell us about your community and we can help outline the best service structure for your layout, resident needs, and operational goals.
-            </p>
-          </div>
-
-          <a class="button button-primary" href="index.html#contact">
-            Contact KoreValet
-          </a>
+    <section class="cta-band">
+      <div class="container cta-band-inner">
+        <div>
+          <h3>Ready to talk through your property?</h3>
+          <p>
+            Send your details and we’ll follow up with a proposal or consultation based on your community’s needs.
+          </p>
         </div>
+
+        <a class="button button-light" href="index.html#contact">Go to Contact Form</a>
       </div>
     </section>
   </main>
 
-  <button
-    class="back-to-top"
-    id="backToTop"
-    type="button"
-    aria-label="Back to top"
-    title="Back to top"
-  >
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top">
     <span aria-hidden="true">&#8593;</span>
   </button>
 
   <footer class="footer">
     <div class="container footer-inner">
-      <a class="brand" href="index.html" aria-label="KoreValet home">
+      <a class="brand" href="index.html#home" aria-label="KoreValet home">
         <svg class="logo-mark" viewBox="0 0 100 55" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M12 7V48" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
           <path d="M19 27L48 7" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
@@ -583,6 +691,13 @@
         </span>
       </a>
 
+      <div class="footer-links">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#additional-services">Additional Services</a>
+        <a href="index.html#roi">Property ROI</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+
       <p>&copy; 2026 KoreValet. All rights reserved.</p>
     </div>
   </footer>
@@ -590,37 +705,38 @@
   <script>
     const menuButton = document.getElementById("menuButton");
     const navLinks = document.getElementById("navLinks");
+    const backToTop = document.getElementById("backToTop");
 
-    if (menuButton) {
+    if (menuButton && navLinks) {
       menuButton.addEventListener("click", () => {
         const isOpen = navLinks.classList.toggle("open");
         menuButton.setAttribute("aria-expanded", String(isOpen));
       });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+          menuButton.setAttribute("aria-expanded", "false");
+        });
+      });
     }
 
-    navLinks.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        menuButton.setAttribute("aria-expanded", "false");
+    if (backToTop) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 450) {
+          backToTop.classList.add("visible");
+        } else {
+          backToTop.classList.remove("visible");
+        }
       });
-    });
 
-    const backToTop = document.getElementById("backToTop");
-
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 450) {
-        backToTop.classList.add("visible");
-      } else {
-        backToTop.classList.remove("visible");
-      }
-    });
-
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
       });
-    });
+    }
   </script>
 </body>
 </html>
