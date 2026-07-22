@@ -235,17 +235,17 @@
     /* Hero */
 
     .hero {
-  background:
-    linear-gradient(
-      105deg,
-      rgba(36, 58, 85, 0.98),
-      rgba(48, 74, 106, 0.72)
-    ),
-    url("https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1800&q=90")
-    center / cover no-repeat;
-  color: var(--white);
-  padding: 105px 0;
-}
+      background:
+        linear-gradient(
+          105deg,
+          rgba(36, 58, 85, 0.98),
+          rgba(48, 74, 106, 0.72)
+        ),
+        url("https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1800&q=90")
+        center / cover no-repeat;
+      color: var(--white);
+      padding: 105px 0;
+    }
 
     .hero-grid {
       align-items: center;
@@ -944,11 +944,11 @@
         </div>
 
         <div class="hero-property-image">
-  <img
-    src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1400&q=90"
-    alt="Modern apartment community building"
-  >
-</div>
+          <img
+            src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1400&q=90"
+            alt="Modern apartment community building"
+          >
+        </div>
       </div>
     </section>
 
@@ -1226,7 +1226,7 @@
           </div>
         </div>
 
-      <form
+        <form
           class="contact-form"
           action="https://formspree.io/f/mjgnopaq"
           method="POST"
@@ -1320,9 +1320,10 @@
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
-          <path d="M12 7V48" stroke="#9BAFC1" stroke-width="8" stroke-linecap="round"/>
-          <path d="M19 27L48 7" stroke="#9BAFC1" stroke-width="8" stroke-linecap="round"/>
-          <path d="M19 27L49 48" stroke="#B49A7D" stroke-width="8" stroke-linecap="round"/>
+          <path d="M12 7V48" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+          <path d="M19 27L48 7" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+          <path d="M19 27L49 48" stroke="#9BAFC1" stroke-width="8" stroke-linecap="round"/>
+          <path d="M43 44L52 50" stroke="#B49A7D" stroke-width="5" stroke-linecap="round"/>
         </svg>
 
         <span>
@@ -1331,68 +1332,61 @@
         </span>
       </a>
 
-      <p>&copy; 2026 KoreValet. Serving the DFW area.</p>
+      <p>&copy; 2026 KoreValet. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    const menuButton = document.getElementById("menuButton");
-    const navLinks = document.getElementById("navLinks");
+    // Mobile menu toggle
+    const menuButton = document.getElementById('menuButton');
+    const navLinks = document.getElementById('navLinks');
 
-    menuButton.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-      menuButton.setAttribute("aria-expanded", String(isOpen));
-    });
-
-    navLinks.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        menuButton.setAttribute("aria-expanded", "false");
-      });
-    });
-
-    const unitRange = document.getElementById("unitRange");
-    const unitValue = document.getElementById("unitValue");
-    const residentFee = document.getElementById("residentFee");
-    const serviceCost = document.getElementById("serviceCost");
-    const monthlyRevenue = document.getElementById("monthlyRevenue");
-    const monthlyCost = document.getElementById("monthlyCost");
-    const monthlyProfit = document.getElementById("monthlyProfit");
-    const annualProfit = document.getElementById("annualProfit");
-    const roiPercent = document.getElementById("roiPercent");
-
-    function formatMoney(value) {
-      return value.toLocaleString("en-US", {
-        style: "currency",
-        currency: "USD",
-        maximumFractionDigits: 0
+    if (menuButton) {
+      menuButton.addEventListener('click', () => {
+        const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', !expanded);
+        navLinks.classList.toggle('open');
       });
     }
+
+    // ROI Calculator logic
+    const unitRange = document.getElementById('unitRange');
+    const unitValue = document.getElementById('unitValue');
+    const residentFeeInput = document.getElementById('residentFee');
+    const serviceCostInput = document.getElementById('serviceCost');
+
+    const monthlyRevenueEl = document.getElementById('monthlyRevenue');
+    const monthlyCostEl = document.getElementById('monthlyCost');
+    const monthlyProfitEl = document.getElementById('monthlyProfit');
+    const annualProfitEl = document.getElementById('annualProfit');
+    const roiPercentEl = document.getElementById('roiPercent');
 
     function calculateROI() {
-      const units = Number(unitRange.value) || 0;
-      const residentCharge = Number(residentFee.value) || 0;
-      const unitCost = Number(serviceCost.value) || 0;
-
-      const revenue = units * residentCharge;
-      const cost = units * unitCost;
-      const profit = revenue - cost;
-      const annual = profit * 12;
-      const margin = revenue > 0 ? (profit / revenue) * 100 : 0;
+      const units = parseFloat(unitRange.value) || 0;
+      const fee = parseFloat(residentFeeInput.value) || 0;
+      const cost = parseFloat(serviceCostInput.value) || 0;
 
       unitValue.textContent = units;
-      monthlyRevenue.textContent = formatMoney(revenue);
-      monthlyCost.textContent = formatMoney(cost);
-      monthlyProfit.textContent = formatMoney(profit);
-      annualProfit.textContent = formatMoney(annual);
-      roiPercent.textContent = `${Math.round(margin)}%`;
+
+      const monthlyRevenue = units * fee;
+      const monthlyCost = units * cost;
+      const monthlyProfit = monthlyRevenue - monthlyCost;
+      const annualProfit = monthlyProfit * 12;
+      const roiPercent = monthlyRevenue > 0 ? Math.round((monthlyProfit / monthlyRevenue) * 100) : 0;
+
+      monthlyRevenueEl.textContent = '$' + monthlyRevenue.toLocaleString();
+      monthlyCostEl.textContent = '$' + monthlyCost.toLocaleString();
+      monthlyProfitEl.textContent = '$' + monthlyProfit.toLocaleString();
+      annualProfitEl.textContent = '$' + annualProfit.toLocaleString();
+      roiPercentEl.textContent = roiPercent + '%';
     }
 
-    unitRange.addEventListener("input", calculateROI);
-    residentFee.addEventListener("input", calculateROI);
-    serviceCost.addEventListener("input", calculateROI);
-
-    calculateROI();
+    if (unitRange && residentFeeInput && serviceCostInput) {
+      unitRange.addEventListener('input', calculateROI);
+      residentFeeInput.addEventListener('input', calculateROI);
+      serviceCostInput.addEventListener('input', calculateROI);
+      calculateROI();
+    }
   </script>
 </body>
 </html>
