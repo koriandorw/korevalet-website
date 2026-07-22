@@ -4,13 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank You | KoreValet</title>
+  <meta name="description" content="Thank you for contacting KoreValet.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --forest: #123b31;
-      --orange: #e8844a;
-      --cream: #f5f2eb;
+      --navy-dark: #243a55;
+      --navy: #304a6a;
+      --paper: #fcfaf6;
+      --brown: #806451;
+      --line: #d9d2c9;
       --white: #ffffff;
+      --shadow: 0 18px 45px rgba(48, 74, 106, 0.15);
+      --muted: #687686;
     }
 
     * {
@@ -21,52 +30,63 @@
 
     body {
       align-items: center;
-      background: var(--cream);
-      color: var(--forest);
+      background: var(--paper);
+      color: var(--navy-dark);
       display: flex;
-      font-family: Arial, sans-serif;
+      font-family: "DM Sans", Arial, sans-serif;
       justify-content: center;
       min-height: 100vh;
       padding: 24px;
-      text-align: center;
     }
 
-    .message {
+    .card {
       background: var(--white);
-      border-top: 6px solid var(--orange);
-      max-width: 560px;
-      padding: 52px 32px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      max-width: 640px;
+      padding: 42px 34px;
+      text-align: center;
       width: 100%;
     }
 
     h1 {
-      margin-bottom: 16px;
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
     }
 
     p {
-      line-height: 1.6;
-      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.65;
+      margin-bottom: 24px;
     }
 
-    a {
-      background: var(--forest);
+    .btn {
+      background: var(--navy);
+      border: 1px solid transparent;
       color: var(--white);
       display: inline-block;
-      padding: 14px 22px;
+      font-weight: 700;
+      min-height: 46px;
+      padding: 12px 22px;
       text-decoration: none;
+      transition: 180ms ease;
+    }
+
+    .btn:hover {
+      background: var(--brown);
     }
   </style>
 </head>
-
 <body>
-  <main class="message">
-    <h1>Thank you for contacting KoreValet.</h1>
-
+  <main class="card">
+    <h1>Thank you for your inquiry.</h1>
     <p>
-      Your inquiry has been received. Our team will follow up shortly.
+      We received your message and will follow up shortly with next steps.
     </p>
-
-    <a href="index.html">Return to KoreValet</a>
+    <a class="btn" href="./">Return to Home</a>
   </main>
 </body>
 </html>
