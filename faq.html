@@ -438,6 +438,32 @@
       transform: translateY(0);
     }
 
+    .nav-links a.active,
+    .footer-links a.active {
+      color: var(--brown) !important;
+      font-weight: 800;
+    }
+
+    .nav-links a.active {
+      position: relative;
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 2px;
+      background: var(--brown-light);
+      border-radius: 999px;
+    }
+
+    .footer-links a.active {
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
     @media (max-width: 900px) {
       .hero-grid,
       .faq-band-grid {
@@ -551,8 +577,9 @@
       <nav class="nav-links" id="navLinks">
         <a href="index.html#home">Home</a>
         <a href="index.html#services">Services</a>
-        <a href="index.html#additional-services">Additional Services</a>
+        <a href="additional-services.html">Additional Services</a>
         <a href="index.html#process">Our Process</a>
+        <a href="faq.html" class="active">FAQ</a>
         <a href="index.html#contact">Contact</a>
         <a class="button button-navy nav-cta" href="index.html#contact">Request a Quote</a>
       </nav>
@@ -693,8 +720,9 @@
 
       <div class="footer-links">
         <a href="index.html#services">Services</a>
-        <a href="index.html#additional-services">Additional Services</a>
+        <a href="additional-services.html">Additional Services</a>
         <a href="index.html#roi">Property ROI</a>
+        <a href="faq.html" class="active">FAQ</a>
         <a href="index.html#contact">Contact</a>
       </div>
 
@@ -737,6 +765,16 @@
         });
       });
     }
+
+    const currentPage = window.location.pathname.split("/").pop() || "faq.html";
+
+    document.querySelectorAll(".nav-links a, .footer-links a").forEach((link) => {
+      const href = link.getAttribute("href") || "";
+
+      if (currentPage === "faq.html" && href === "faq.html") {
+        link.classList.add("active");
+      }
+    });
   </script>
 </body>
 </html>
