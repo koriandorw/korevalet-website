@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Frequently asked questions about KoreValet services for apartment communities and other residential properties throughout DFW.">
+  <title>KoreValet | FAQ</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #304a6a;
+      --navy-dark: #243a55;
+      --steel: #9bafc1;
+      --cream: #f3eee4;
+      --paper: #fcfaf6;
+      --brown: #806451;
+      --brown-light: #b49a7d;
+      --ink: #26384f;
+      --muted: #687686;
+      --line: #d9d2c9;
+      --white: #ffffff;
+      --shadow: 0 18px 45px rgba(48, 74, 106, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      margin: 0 auto;
+      width: min(1160px, calc(100% - 40px));
+    }
+
+    .eyebrow {
+      align-items: center;
+      color: var(--brown);
+      display: flex;
+      font-size: 0.72rem;
+      font-weight: 800;
+      gap: 10px;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      background: var(--brown-light);
+      content: "";
+      height: 2px;
+      width: 28px;
+    }
+
+    .section-title {
+      color: var(--navy-dark);
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      letter-spacing: -0.06em;
+      line-height: 1;
+      max-width: 760px;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 680px;
+    }
+
+    .button {
+      align-items: center;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      font-size: 0.88rem;
+      font-weight: 800;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      transition: 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--brown);
+      color: var(--white);
+    }
+
+    .button-primary:hover {
+      background: #684d3d;
+    }
+
+    .button-navy {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .button-navy:hover {
+      background: var(--navy-dark);
+    }
+
+    .site-header {
+      background: rgba(252, 250, 246, 0.96);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+    }
+
+    .navigation {
+      align-items: center;
+      display: flex;
+      height: 78px;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .brand {
+      align-items: center;
+      display: inline-flex;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      height: 43px;
+      width: 82px;
+    }
+
+    .brand-name {
+      color: var(--navy-dark);
+      display: block;
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: 1.18rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .brand-subtitle {
+      color: var(--brown);
+      display: block;
+      font-size: 0.53rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      align-items: center;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--brown);
+    }
+
+    .nav-links .nav-cta {
+      color: var(--white);
+      min-height: 42px;
+      padding: 0 16px;
+    }
+
+    .menu-button {
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      display: none;
+      padding: 8px;
+    }
+
+    .menu-button span {
+      background: var(--navy-dark);
+      display: block;
+      height: 2px;
+      margin: 5px 0;
+      width: 25px;
+    }
+
+    .hero {
+      background:
+        linear-gradient(105deg, rgba(36, 58, 85, 0.96), rgba(48, 74, 106, 0.76)),
+        url("https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1800&q=90")
+        center / cover no-repeat;
+      color: var(--white);
+      padding: 95px 0;
+    }
+
+    .hero h1 {
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      letter-spacing: -0.07em;
+      line-height: 0.96;
+      margin: 22px 0;
+      max-width: 760px;
+    }
+
+    .hero-copy {
+      color: #e4ebf0;
+      font-size: 1.08rem;
+      max-width: 680px;
+    }
+
+    .faq-section {
+      background: var(--paper);
+      padding: 95px 0;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 20px rgba(48, 74, 106, 0.05);
+      padding: 22px;
+    }
+
+    .faq-item h3 {
+      color: var(--navy-dark);
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .cta-section {
+      background: var(--cream);
+      padding: 90px 0;
+    }
+
+    .cta-box {
+      background: var(--white);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr auto;
+      padding: 34px;
+      align-items: center;
+    }
+
+    .cta-box h2 {
+      color: var(--navy-dark);
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      letter-spacing: -0.05em;
+      line-height: 1.05;
+      margin-bottom: 10px;
+    }
+
+    .cta-box p {
+      color: var(--muted);
+    }
+
+    .footer {
+      background: var(--navy-dark);
+      color: var(--white);
+      padding: 30px 0;
+    }
+
+    .footer-inner {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .footer .brand-name {
+      color: var(--white);
+    }
+
+    .footer .brand-subtitle {
+      color: #c1ced8;
+    }
+
+    .footer p {
+      color: #c1ced8;
+      font-size: 0.79rem;
+    }
+
+    .back-to-top {
+      align-items: center;
+      background: var(--navy);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 50%;
+      bottom: 24px;
+      box-shadow: var(--shadow);
+      color: var(--white);
+      cursor: pointer;
+      display: flex;
+      font-size: 1.35rem;
+      height: 48px;
+      justify-content: center;
+      opacity: 0;
+      padding: 0;
+      pointer-events: none;
+      position: fixed;
+      right: 24px;
+      transform: translateY(12px);
+      transition: opacity 180ms ease, transform 180ms ease, background 180ms ease;
+      width: 48px;
+      z-index: 30;
+    }
+
+    .back-to-top:hover {
+      background: var(--brown);
+      transform: translateY(0);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 30px, 1160px);
+      }
+
+      .navigation {
+        height: 68px;
+      }
+
+      .logo-mark {
+        height: 37px;
+        width: 70px;
+      }
+
+      .brand-subtitle {
+        font-size: 0.47rem;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        align-items: stretch;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        left: 0;
+        padding: 10px 15px 18px;
+        position: absolute;
+        right: 0;
+        top: 68px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 13px 0;
+      }
+
+      .nav-links .nav-cta {
+        margin-top: 5px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.6rem, 14vw, 4rem);
+      }
+
+      .footer-inner {
+        align-items: start;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .back-to-top {
+        bottom: 18px;
+        height: 44px;
+        right: 16px;
+        width: 44px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container navigation">
+      <a class="brand" href="index.html" aria-label="KoreValet home">
+        <svg class="logo-mark" viewBox="0 0 100 55" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 7V48" stroke="#304A6A" stroke-width="8" stroke-linecap="round"/>
+          <path d="M19 27L48 7" stroke="#304A6A" stroke-width="8" stroke-linecap="round"/>
+          <path d="M19 27L49 48" stroke="#9BAFC1" stroke-width="8" stroke-linecap="round"/>
+          <path d="M43 44L52 50" stroke="#B49A7D" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+
+        <span>
+          <span class="brand-name">KoreValet</span>
+          <span class="brand-subtitle">VALET TRASH & RECYCLING</span>
+        </span>
+      </a>
+
+      <button class="menu-button" id="menuButton" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Core Services</a>
+        <a href="additional-services.html">Additional Services</a>
+        <a href="faq.html">FAQ</a>
+        <a href="index.html#contact">Contact</a>
+        <a class="button button-navy nav-cta" href="index.html#contact">
+          Request a Quote
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Answers for Property Teams</div>
+        <h1>Frequently asked questions about KoreValet services.</h1>
+        <p class="hero-copy">
+          Find quick answers about property types served, scheduling, dog waste stations, and how KoreValet can help simplify operations while supporting property appearance.
+        </p>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="container">
+        <div class="eyebrow">FAQ</div>
+
+        <h2 class="section-title">
+          Common questions from property teams.
+        </h2>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>How often can service be scheduled?</h3>
+            <p>
+              Service frequency can be tailored based on property type, resident volume, and operational needs.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Do you only serve apartment communities?</h3>
+            <p>
+              No. KoreValet can also support HOAs, townhome associations, student housing, senior living, and extended stay properties.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can you help with dog waste stations?</h3>
+            <p>
+              Yes. KoreValet can provide dog waste station trash removal, bag refills, and replacement supplies as needed.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can services be customized by property?</h3>
+            <p>
+              Yes. We can help build a property-specific service plan based on layout, resident needs, shared spaces, and collection goals.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Do you offer quotes and consultations?</h3>
+            <p>
+              Yes. Use the inquiry form to request a custom quote or book a consultation for your property.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What information should I include in my inquiry?</h3>
+            <p>
+              It helps to include location, unit count, approximate number of buildings, current provider or setup, and preferred start timeline.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can KoreValet support student housing or senior living?</h3>
+            <p>
+              Yes. We can tailor service plans for student housing, senior living, extended stay, HOAs, townhome communities, and traditional apartment properties.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can you provide both valet trash and pet station support?</h3>
+            <p>
+              Yes. Many communities combine valet trash service with dog waste station trash removal, bag refills, and supply replacement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>Still have questions about your property?</h2>
+            <p>
+              Tell us about your community and we can help outline the best service structure for your layout, resident needs, and operational goals.
+            </p>
+          </div>
+
+          <a class="button button-primary" href="index.html#contact">
+            Contact KoreValet
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Back to top"
+    title="Back to top"
+  >
+    <span aria-hidden="true">&#8593;</span>
+  </button>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html" aria-label="KoreValet home">
+        <svg class="logo-mark" viewBox="0 0 100 55" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 7V48" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+          <path d="M19 27L48 7" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+          <path d="M19 27L49 48" stroke="#9BAFC1" stroke-width="8" stroke-linecap="round"/>
+          <path d="M43 44L52 50" stroke="#B49A7D" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+
+        <span>
+          <span class="brand-name">KoreValet</span>
+          <span class="brand-subtitle">VALET TRASH & RECYCLING</span>
+        </span>
+      </a>
+
+      <p>&copy; 2026 KoreValet. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    if (menuButton) {
+      menuButton.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("open");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+      });
+    }
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    const backToTop = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 450) {
+        backToTop.classList.add("visible");
+      } else {
+        backToTop.classList.remove("visible");
+      }
+    });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+</body>
+</html>
