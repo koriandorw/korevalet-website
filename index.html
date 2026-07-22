@@ -145,8 +145,6 @@
       background: var(--navy-dark);
     }
 
-    /* Header */
-
     .site-header {
       background: rgba(252, 250, 246, 0.96);
       border-bottom: 1px solid var(--line);
@@ -232,8 +230,6 @@
       width: 25px;
     }
 
-    /* Hero */
-
     .hero {
       background:
         linear-gradient(
@@ -292,8 +288,6 @@
       width: 100%;
     }
 
-    /* Stats */
-
     .stats {
       background: var(--cream);
       border-bottom: 1px solid var(--line);
@@ -324,8 +318,6 @@
       font-size: 0.84rem;
       line-height: 1.25;
     }
-
-    /* Services */
 
     .services {
       padding: 110px 0;
@@ -389,8 +381,6 @@
       font-size: 0.91rem;
     }
 
-    /* Dog waste stations */
-
     .pet-service {
       background: var(--navy-dark);
       color: var(--white);
@@ -448,8 +438,6 @@
       padding-left: 12px;
     }
 
-    /* Process */
-
     .process {
       background: #e7edf1;
       padding: 105px 0;
@@ -490,8 +478,6 @@
       color: var(--muted);
       font-size: 0.91rem;
     }
-
-    /* ROI */
 
     .roi-section {
       padding: 110px 0;
@@ -611,8 +597,6 @@
       color: #ddc4a5;
     }
 
-    /* Contact */
-
     .contact {
       background: var(--cream);
       padding: 110px 0;
@@ -706,8 +690,6 @@
       width: 100%;
     }
 
-    /* Footer */
-
     .footer {
       background: var(--navy-dark);
       color: var(--white);
@@ -733,7 +715,40 @@
       font-size: 0.79rem;
     }
 
-    /* Responsive */
+    .back-to-top {
+      align-items: center;
+      background: var(--navy);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 50%;
+      bottom: 24px;
+      box-shadow: var(--shadow);
+      color: var(--white);
+      cursor: pointer;
+      display: flex;
+      font-size: 1.35rem;
+      height: 48px;
+      justify-content: center;
+      opacity: 0;
+      padding: 0;
+      pointer-events: none;
+      position: fixed;
+      right: 24px;
+      transform: translateY(12px);
+      transition: opacity 180ms ease, transform 180ms ease, background 180ms ease;
+      width: 48px;
+      z-index: 30;
+    }
+
+    .back-to-top:hover {
+      background: var(--brown);
+      transform: translateY(0);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
 
     @media (max-width: 900px) {
       .hero-grid,
@@ -867,6 +882,13 @@
         align-items: start;
         flex-direction: column;
         gap: 18px;
+      }
+
+      .back-to-top {
+        bottom: 18px;
+        height: 44px;
+        right: 16px;
+        width: 44px;
       }
     }
   </style>
@@ -1006,7 +1028,7 @@
 
           <article class="service-card">
             <img
-              src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=85"
+              src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=900&q=90"
               alt="Apartment hallway and entrance area where doorstep collection takes place"
               loading="lazy"
             >
@@ -1022,8 +1044,8 @@
 
           <article class="service-card">
             <img
-              src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=85"
-              alt="Well-maintained apartment community exterior with landscaping"
+              src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=900&q=90"
+              alt="Well-maintained multi-story apartment community"
               loading="lazy"
             >
 
@@ -1240,7 +1262,7 @@
           <input
             type="hidden"
             name="_next"
-            value="https://korevalet.com/#contact"
+            value="https://korevalet.com/thank-you.html"
           >
 
           <div class="form-row">
@@ -1310,6 +1332,16 @@
     </section>
   </main>
 
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Back to top"
+    title="Back to top"
+  >
+    <span aria-hidden="true">&#8593;</span>
+  </button>
+
   <footer class="footer">
     <div class="container footer-inner">
       <a class="brand" href="#home" aria-label="KoreValet home">
@@ -1337,56 +1369,80 @@
   </footer>
 
   <script>
-    // Mobile menu toggle
-    const menuButton = document.getElementById('menuButton');
-    const navLinks = document.getElementById('navLinks');
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
 
-    if (menuButton) {
-      menuButton.addEventListener('click', () => {
-        const expanded = menuButton.getAttribute('aria-expanded') === 'true';
-        menuButton.setAttribute('aria-expanded', !expanded);
-        navLinks.classList.toggle('open');
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    const unitRange = document.getElementById("unitRange");
+    const unitValue = document.getElementById("unitValue");
+    const residentFee = document.getElementById("residentFee");
+    const serviceCost = document.getElementById("serviceCost");
+    const monthlyRevenue = document.getElementById("monthlyRevenue");
+    const monthlyCost = document.getElementById("monthlyCost");
+    const monthlyProfit = document.getElementById("monthlyProfit");
+    const annualProfit = document.getElementById("annualProfit");
+    const roiPercent = document.getElementById("roiPercent");
+
+    function formatMoney(value) {
+      return value.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 0
       });
     }
 
-    // ROI Calculator logic
-    const unitRange = document.getElementById('unitRange');
-    const unitValue = document.getElementById('unitValue');
-    const residentFeeInput = document.getElementById('residentFee');
-    const serviceCostInput = document.getElementById('serviceCost');
-
-    const monthlyRevenueEl = document.getElementById('monthlyRevenue');
-    const monthlyCostEl = document.getElementById('monthlyCost');
-    const monthlyProfitEl = document.getElementById('monthlyProfit');
-    const annualProfitEl = document.getElementById('annualProfit');
-    const roiPercentEl = document.getElementById('roiPercent');
-
     function calculateROI() {
-      const units = parseFloat(unitRange.value) || 0;
-      const fee = parseFloat(residentFeeInput.value) || 0;
-      const cost = parseFloat(serviceCostInput.value) || 0;
+      const units = Number(unitRange.value) || 0;
+      const residentCharge = Number(residentFee.value) || 0;
+      const unitCost = Number(serviceCost.value) || 0;
+
+      const revenue = units * residentCharge;
+      const cost = units * unitCost;
+      const profit = revenue - cost;
+      const annual = profit * 12;
+      const margin = revenue > 0 ? (profit / revenue) * 100 : 0;
 
       unitValue.textContent = units;
-
-      const monthlyRevenue = units * fee;
-      const monthlyCost = units * cost;
-      const monthlyProfit = monthlyRevenue - monthlyCost;
-      const annualProfit = monthlyProfit * 12;
-      const roiPercent = monthlyRevenue > 0 ? Math.round((monthlyProfit / monthlyRevenue) * 100) : 0;
-
-      monthlyRevenueEl.textContent = '$' + monthlyRevenue.toLocaleString();
-      monthlyCostEl.textContent = '$' + monthlyCost.toLocaleString();
-      monthlyProfitEl.textContent = '$' + monthlyProfit.toLocaleString();
-      annualProfitEl.textContent = '$' + annualProfit.toLocaleString();
-      roiPercentEl.textContent = roiPercent + '%';
+      monthlyRevenue.textContent = formatMoney(revenue);
+      monthlyCost.textContent = formatMoney(cost);
+      monthlyProfit.textContent = formatMoney(profit);
+      annualProfit.textContent = formatMoney(annual);
+      roiPercent.textContent = Math.round(margin) + "%";
     }
 
-    if (unitRange && residentFeeInput && serviceCostInput) {
-      unitRange.addEventListener('input', calculateROI);
-      residentFeeInput.addEventListener('input', calculateROI);
-      serviceCostInput.addEventListener('input', calculateROI);
-      calculateROI();
-    }
+    unitRange.addEventListener("input", calculateROI);
+    residentFee.addEventListener("input", calculateROI);
+    serviceCost.addEventListener("input", calculateROI);
+
+    calculateROI();
+
+    const backToTop = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 450) {
+        backToTop.classList.add("visible");
+      } else {
+        backToTop.classList.remove("visible");
+      }
+    });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
   </script>
 </body>
 </html>
