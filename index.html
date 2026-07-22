@@ -145,6 +145,17 @@
       background: var(--navy-dark);
     }
 
+    .button-outline {
+      background: transparent;
+      border-color: var(--navy);
+      color: var(--navy);
+    }
+
+    .button-outline:hover {
+      background: var(--navy);
+      color: var(--white);
+    }
+
     .site-header {
       background: rgba(252, 250, 246, 0.96);
       border-bottom: 1px solid var(--line);
@@ -438,6 +449,13 @@
       padding-left: 12px;
     }
 
+    .service-teaser {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 85px 0;
+    }
+
     .process {
       background: #e7edf1;
       padding: 105px 0;
@@ -477,6 +495,37 @@
     .process-item p {
       color: var(--muted);
       font-size: 0.91rem;
+    }
+
+    .service-area {
+      background: var(--paper);
+      padding: 95px 0;
+    }
+
+    .service-area-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 32px;
+    }
+
+    .service-area-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 20px rgba(48, 74, 106, 0.05);
+      padding: 22px;
+    }
+
+    .service-area-card strong {
+      color: var(--navy-dark);
+      display: block;
+      font-family: "Manrope", Arial, sans-serif;
+      margin-bottom: 8px;
+    }
+
+    .service-area-card span {
+      color: var(--muted);
+      font-size: 0.94rem;
     }
 
     .roi-section {
@@ -595,6 +644,35 @@
 
     .result.highlight strong {
       color: #ddc4a5;
+    }
+
+    .faq-section {
+      background: var(--white);
+      padding: 95px 0;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .faq-item {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 22px;
+    }
+
+    .faq-item h3 {
+      color: var(--navy-dark);
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
     .contact {
@@ -749,12 +827,7 @@
       pointer-events: auto;
       transform: translateY(0);
     }
-.service-teaser {
-  background: var(--white);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  padding: 85px 0;
-}
+
     @media (max-width: 900px) {
       .hero-grid,
       .process-grid,
@@ -779,13 +852,17 @@
 
       .services,
       .process,
+      .service-area,
       .roi-section,
+      .faq-section,
       .contact {
         padding: 80px 0;
       }
 
       .roi-grid,
-      .contact-grid {
+      .contact-grid,
+      .service-area-grid {
+        grid-template-columns: 1fr;
         gap: 42px;
       }
     }
@@ -849,7 +926,9 @@
 
       .stats-grid,
       .services-grid,
-      .pet-service-list {
+      .pet-service-list,
+      .form-row,
+      .results {
         grid-template-columns: 1fr;
       }
 
@@ -876,11 +955,6 @@
       .calculator,
       .contact-form {
         padding: 24px;
-      }
-
-      .form-row,
-      .results {
-        grid-template-columns: 1fr;
       }
 
       .footer-inner {
@@ -1095,7 +1169,7 @@
           </div>
         </section>
       </div>
-        </section>
+    </section>
 
     <section class="service-teaser">
       <div class="container">
@@ -1175,6 +1249,37 @@
       </div>
     </section>
 
+    <section class="service-area">
+      <div class="container">
+        <div class="eyebrow">Service Area</div>
+
+        <h2 class="section-title">
+          Serving apartment and residential communities across DFW.
+        </h2>
+
+        <p class="section-copy" style="margin-top: 20px;">
+          KoreValet supports communities throughout the Dallas-Fort Worth area with dependable service routines, property-friendly scheduling, and responsive communication.
+        </p>
+
+        <div class="service-area-grid">
+          <div class="service-area-card">
+            <strong>Primary Coverage</strong>
+            <span>Dallas, Fort Worth, Arlington, Irving, Grand Prairie, Plano, Frisco, McKinney, Denton and surrounding areas.</span>
+          </div>
+
+          <div class="service-area-card">
+            <strong>Property Types</strong>
+            <span>Apartments, HOAs, townhome associations, student housing, senior living, and extended stay communities.</span>
+          </div>
+
+          <div class="service-area-card">
+            <strong>Support Available</strong>
+            <span>Valet trash, recycling support, dog waste station service, bag refills, and property-specific service plans.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="roi-section" id="roi">
       <div class="container roi-grid">
         <div class="roi-intro">
@@ -1240,6 +1345,60 @@
               <span>Estimated ROI margin</span>
               <strong id="roiPercent">60%</strong>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="container">
+        <div class="eyebrow">FAQ</div>
+
+        <h2 class="section-title">
+          Common questions from property teams.
+        </h2>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>How often can service be scheduled?</h3>
+            <p>
+              Service frequency can be tailored based on property type, resident volume, and operational needs.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Do you only serve apartment communities?</h3>
+            <p>
+              No. KoreValet can also support HOAs, townhome associations, student housing, senior living, and extended stay properties.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can you help with dog waste stations?</h3>
+            <p>
+              Yes. KoreValet can provide dog waste station trash removal, bag refills, and replacement supplies as needed.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can services be customized by property?</h3>
+            <p>
+              Yes. We can help build a property-specific service plan based on layout, resident needs, shared spaces, and collection goals.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Do you offer quotes and consultations?</h3>
+            <p>
+              Yes. Use the inquiry form to request a custom quote or book a consultation for your property.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What information should I include in my inquiry?</h3>
+            <p>
+              It helps to include location, unit count, approximate number of buildings, current provider or setup, and preferred start timeline.
+            </p>
           </div>
         </div>
       </div>
@@ -1327,9 +1486,25 @@
             </div>
           </div>
 
+          <div class="form-row">
+            <div class="field">
+              <label for="buildings">Approximate number of buildings</label>
+              <input id="buildings" name="building_count" type="number" min="1">
+            </div>
+
+            <div class="field">
+              <label for="startDate">Preferred service start</label>
+              <input id="startDate" name="preferred_start_date" type="text" placeholder="ASAP or target month">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="currentProvider">Current provider or current setup</label>
+            <input id="currentProvider" name="current_provider" type="text" placeholder="Optional">
+          </div>
+
           <div class="field">
             <label for="requestType">What can we help with?</label>
-
             <select id="requestType" name="request_type" required>
               <option value="">Select one</option>
               <option value="Request a quote">Request a quote</option>
@@ -1342,11 +1517,10 @@
 
           <div class="field">
             <label for="message">Additional details</label>
-
             <textarea
               id="message"
               name="message"
-              placeholder="Tell us about your community, service needs, or timeline."
+              placeholder="Tell us about your community, service needs, current setup, or timeline."
             ></textarea>
           </div>
 
