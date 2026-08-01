@@ -964,16 +964,18 @@
           </div>
         </div>
 
-       <div class="hero-property-image">
+  <div class="hero-property-image">
   <video
+    id="heroVideo"
     autoplay
     muted
     loop
     playsinline
     preload="auto"
+    poster="property-value.jpg"
     aria-label="Apartment community exterior video"
   >
-    <source src="herovideo.mp4" type="video/mp4">
+    <source src="https://res.cloudinary.com/irntqbno/video/upload/v1785622498/Herovideo.Mp4_otxb49.mp4" type="video/mp4">
   </video>
 </div>
       </div>
@@ -1449,5 +1451,11 @@ loading="lazy"
       });
     });
   </script>
+  const heroVideo = document.getElementById("heroVideo");
+if (heroVideo) {
+  heroVideo.play().catch(() => {
+    // If autoplay is blocked, user still sees poster image.
+  });
+}
 </body>
 </html>
